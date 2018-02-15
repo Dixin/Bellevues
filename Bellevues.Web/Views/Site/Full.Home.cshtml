@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/Full.Layout.cshtml";
+}
+
+@section Title {
+首页
+}
+
+@section NavigationHome{
+selected
+}
+
+<div class="bellevues-page-block bellevues-page-block-home" style="background: url('@this.Href("~/Contents/HomeMain.jpg")'); height: 770px;">
+    <a class="main" href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Story })" title="倍丽芙 Bellevues - 美丽的风景(品牌故事)">
+        <div>
+            <h1>倍丽芙: 美丽的风景</h1>
+            <h2>Belle vues: Beautiful views</h2>
+            <h2>源自瑞士, 纯净天然的专业护肤, 让您成为每一个人眼中美丽的风景</h2>
+        </div>
+    </a>
+    <a class="list" title="倍丽芙 Bellevues - 补水面膜">
+        <div>
+            <h1>紧致面膜</h1>
+            <h2>紧致脸庞, 完美容颜</h2>
+        </div>
+    </a>
+    <a class="list" title="倍丽芙 Bellevues - 喜悦面膜">
+        <div>
+            <h1>补水面膜</h1>
+            <h2>深度滋润, 焕变肌肤</h2>
+        </div>
+    </a>
+    <a class="list" title="倍丽芙 Bellevues - 紧致面膜">
+        <div>
+            <h1>喜悦面膜</h1>
+            <h2>立体呵护, 流光盈动</h2>
+        </div>
+    </a>
+</div>
+
+<div class="bellevues-page-block" style="background: url('@this.Href("~/Contents/HomeStory.jpg")'); height: 650px;">
+    <a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Story })" title="倍丽芙 Bellevues - 美丽的风景(品牌故事)" class="full" style="height: 650px;">
+        <div style="padding: 180px 520px 0 0; text-align: center;">
+            <h1>倍丽芙: 美丽的风景</h1>
+            <h2>Belle vues: Beautiful views</h2>
+            <h2>
+                源自瑞士, 纯净天然的专业护肤<br />
+                让您成为每一个人眼中美丽的风景
+            </h2>
+        </div>
+    </a>
+</div>
+
+<div class="bellevues-page-block" style="background: url('@this.Href("~/Contents/HomeFeatures.jpg")');">
+    <a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Features })" title="倍丽芙 Bellevues - 源自瑞士的纯净天然(成分和功效)" class="full">
+        <div style="padding: 240px 45px 0 570px;">
+            <h1>源自瑞士, 纯净天然</h1>
+            <h2>倍丽芙精选瑞士Mibelle<span class="sup">&reg;</span> PhytoCellTec&trade;阿尔卑斯野玫瑰精纯因子, GSP-T&trade;葡萄籽提取精华, 阿尔卑斯山矿物质水, 弗鲁蒂根鲟鱼子酱萃取物, 高山火绒草等纯净天然成分, 对您的肌肤由表及里, 层层滋润, 使您的肌肤焕发自然的晶莹, 让您成为所有人眼中美丽的风景.</h2>
+        </div>
+    </a>
+</div>

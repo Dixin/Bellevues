@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/Full.Layout.cshtml";
+}
+
+@section Title {
+面膜系列
+}
+
+@section NavigationFacial{
+selected
+}
+
+<div class="bellevues-page-block bellevues-page-block-list" style="background-image: url('@this.Href("~/Contents/Facial.jpg")');">
+    <div style="height: 550px;">
+        <div style="padding: 140px 340px 0 0; text-align: center;">
+            <h1>倍丽芙: 美丽的风景</h1>
+            <h2>Belle vues: Beautiful views</h2>
+            <h2>源自瑞士, 纯净天然的专业护肤<br />
+                让您成为每一个人眼中美丽的风景
+            </h2>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>面膜系列</h1>
+            <h2>深度滋润, 焕变肌肤</h2>
+        </div>
+    </div>
+    <ul>
+        <li style="border-bottom-color: #D03F42;"><a href="#@ProductAnchor.FaceWhitening">紧致面膜</a></li>
+        <li style="border-bottom-color: #158AFF;"><a href="#@ProductAnchor.FaceMoisture">补水面膜</a></li>
+        <li style="border-bottom-color: #FFB900;"><a href="#@ProductAnchor.FaceFixing">喜悦面膜</a></li>
+        <li style="border-bottom-color: #8763BC; display:none;"><a href="#@ProductAnchor.FaceAntiWrinkle">抗皱面膜</a></li>
+        <li style="border-bottom-color: #30F0DC; display:none;"><a href="#@ProductAnchor.FaceOilControl">控油面膜</a></li>
+        <li style="border-bottom-color: #60BB25; display:none;"><a href="#@ProductAnchor.FaceAcneEliminating">抗痘面膜</a></li>
+    </ul>
+</div>
+
+<a id="@ProductAnchor.FaceWhitening"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.FaceWhitening + ".jpg")');">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>时光塑颜<span style="color: #D03F42;">紧致</span>面膜</h1>
+        <h2>臻选多种植物精华,增加肌肤弹性,改善因肌肤老化而引起的松弛,下垂及细纹问题。</h2>
+        <a class="bellevues-page-buy-button" href="@Constants.FaceWhitening" title="立即购买" target="_blank">立即购买</a>
+    </div>
+</div>
+
+<a id="@ProductAnchor.FaceMoisture"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.FaceMoisture + ".jpg")');">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>玫瑰活氧<span style="color: #158AFF;">补水</span>面膜</h1>
+        <h2>臻选多种植物精华，蕴含丰富微量元素及锁水成分，能提升肌肤的含水量和保水度，改善因缺水造成的肌肤老化问题。</h2>
+        <a class="bellevues-page-buy-button" href="@Constants.FaceMoisture" title="立即购买" target="_blank">立即购买</a>
+    </div>
+</div>
+
+<a id="@ProductAnchor.FaceFixing"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.FaceFixing + ".jpg")');">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>时光活颜<span style="color: #FFB900;">喜悦</span>面膜</h1>
+        <h2>蕴含多种珍贵植物精华，补充肌肤营养及水分，滋润因外界环境污染或光老化后的肌肤，舒缓减压，静享美肌喜悦！</h2>
+        <a class="bellevues-page-buy-button" href="@Constants.FaceFixing" title="立即购买" target="_blank">立即购买</a>
+    </div>
+</div>
+
+<a id="@ProductAnchor.FaceAntiWrinkle"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.FaceAntiWrinkle + ".jpg")'); display:none;">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>玫瑰活氧<span style="color: #8763BC;">抗皱</span>面膜</h1>
+        <h2>深层滋养和调理细胞, 有效激活细胞的活化能力, 强化肌肤组织正常功能, 紧实细胞膜. 提高细胞内含水量, 以及辅肋抵抗紫外线, 迅速平抚面部细纹, 有效改善皱纹皮肤的干燥性, 使皮肤盈润柔亮富有活力.</h2>
+        <a class="bellevues-page-buy-button" href="@Constants.FaceAntiWrinkle" title="立即购买" target="_blank">立即购买</a>
+    </div>
+</div>
+
+<a id="@ProductAnchor.FaceOilControl"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.FaceOilControl + ".jpg")'); display:none;">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>葡萄籽活氧<span style="color: #30F0DC;">控油</span>面膜</h1>
+        <h2>迅速减少肌肤多余的油脂分泌, 和降低暗疮与粉刺的发生率, 有效调控皮肤的PH值, 收敛毛孔, 镇静, 安抚肌肤, 改善因针清后的皮肤红症.</h2>
+        <a class="bellevues-page-buy-button" href="@Constants.FaceOilControl" title="立即购买" target="_blank">立即购买</a>
+    </div>
+</div>
+
+<a id="@ProductAnchor.FaceAcneEliminating"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.FaceAcneEliminating + ".jpg")'); display:none;">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>葡萄籽活氧<span style="color: #60BB25;">抗痘</span>面膜</h1>
+        <h2>去除皮肤多余的油脂, 加速皮肤细胞代谢与循环功能, 通过消炎, 抑菌以及平衡肌肤酸碱度, 迅速补充肌肤所需的水份与养份.</h2>
+        <a class="bellevues-page-buy-button" href="@Constants.FaceAcneEliminating" title="立即购买" target="_blank">立即购买</a>
+    </div>
+</div>

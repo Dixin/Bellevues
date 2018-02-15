@@ -1,0 +1,40 @@
+﻿@{
+    this.Layout = null;
+    this.Response.ContentType = "text/cache-manifest";
+    Func<string, IEnumerable<string>> getFiles = folder =>
+        Directory.EnumerateFiles(this.Context.Server.MapPath(folder))
+            .Select(Path.GetFileName)
+            .Select(file => Path.Combine(folder, file))
+            .Select(file => this.Href(file));
+}CACHE MANIFEST
+
+# Explicitly cached.
+CACHE:
+@this.Href("~/favicon.ico")
+@this.Href("~/App_Themes/Default/Reset.css")
+@this.Href("~/App_Themes/Default/Full.css")
+@foreach (string file in getFiles("~/App_Themes/Default"))
+{
+<text>@file</text>
+}
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Home })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Story })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Features })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Terms })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Privacy })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.SiteMap })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.Contact })
+@this.Url.Action("Full", "Site", new { id = SiteViewId.FacialPageOne })
+@foreach (string file in getFiles("~/Contents"))
+{
+<text>@file</text>
+}
+
+# Resources that require the user to be online.
+NETWORK:
+http://beilifu.taobao.com
+
+FALLBACK:

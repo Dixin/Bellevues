@@ -1,0 +1,1532 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EAC1C29-2703-4F43-8998-A843B16593A0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bellevues.Blog</RootNamespace>
+    <AssemblyName>Bellevues.Blog</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dynamic">
+      <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.3.1.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.ExecutionContextScoping">
+      <HintPath>..\packages\SimpleInjector.Extensions.ExecutionContextScoping.3.1.0\lib\net45\SimpleInjector.Extensions.ExecutionContextScoping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.WebApi">
+      <HintPath>..\packages\SimpleInjector.Integration.WebApi.3.1.0\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\account.master" />
+    <Content Include="Account\Logout.cshtml" />
+    <Content Include="Account\Web.Config" />
+    <Content Include="admin\about.cshtml" />
+    <Content Include="admin\admin.master" />
+    <Content Include="admin\app\editor\editpage.cshtml" />
+    <Content Include="admin\app\editor\editpost.cshtml" />
+    <Content Include="admin\app\editor\filemanager.cshtml" />
+    <Content Include="admin\app\editor\Web.Config" />
+    <Content Include="admin\editors\bootstrap-wysiwyg\editor.cshtml" />
+    <Content Include="admin\editors\summernote\editor.cshtml" />
+    <Content Include="admin\editors\tinymce\editor.cshtml" />
+    <Content Include="admin\editors\tinymce\langs\readme.md" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\fonts\sh4tinymce.eot" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\fonts\sh4tinymce.ttf" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\fonts\sh4tinymce.woff" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="admin\index.cshtml" />
+    <Content Include="admin\themes\standard\css\styles.css.map" />
+    <Content Include="admin\themes\standard\layout.cshtml" />
+    <Content Include="admin\themes\standard\README.md" />
+    <Content Include="admin\themes\standard\scss\base\_base.scss" />
+    <Content Include="admin\themes\standard\scss\base\_mixins.scss" />
+    <Content Include="admin\themes\standard\scss\base\_reset.scss" />
+    <Content Include="admin\themes\standard\scss\base\_utilites.scss" />
+    <Content Include="admin\themes\standard\scss\base\_variables.scss" />
+    <Content Include="admin\themes\standard\scss\layout\_header.scss" />
+    <Content Include="admin\themes\standard\scss\layout\_main.scss" />
+    <Content Include="admin\themes\standard\scss\layout\_sidebar.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_alerts.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_buttons.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_dropdown.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_editors.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_filemanager.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_forms.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_modals.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_pagination.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_panels.scss" />
+    <Content Include="admin\themes\standard\scss\modules\_tables.scss" />
+    <Content Include="admin\themes\standard\scss\pages\about\_about.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_categories.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_comments.filters.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_comments.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_pages.new.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_pages.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_posts.new.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_posts.scss" />
+    <Content Include="admin\themes\standard\scss\pages\content\_tags.scss" />
+    <Content Include="admin\themes\standard\scss\pages\custom\_plugins.gallery.scss" />
+    <Content Include="admin\themes\standard\scss\pages\custom\_plugins.scss" />
+    <Content Include="admin\themes\standard\scss\pages\custom\_themes.gallery.scss" />
+    <Content Include="admin\themes\standard\scss\pages\custom\_themes.scss" />
+    <Content Include="admin\themes\standard\scss\pages\custom\_widgets.scss" />
+    <Content Include="admin\themes\standard\scss\pages\dashboard\_dashboard.scss" />
+    <Content Include="admin\themes\standard\scss\pages\security\_profile.scss" />
+    <Content Include="admin\themes\standard\scss\pages\security\_roles.scss" />
+    <Content Include="admin\themes\standard\scss\pages\security\_users.scss" />
+    <Content Include="admin\themes\standard\scss\pages\settings\_settings.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.about.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.bootstrap.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.buttons.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.dashboard.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.dropdown.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.filemanager.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.forms.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.header.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.main.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.modals.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.panels.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.plugins.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.settings.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.sidebar.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.tables.scss" />
+    <Content Include="admin\themes\standard\scss\rtl\_rtl.widgets.scss" />
+    <Content Include="admin\themes\standard\scss\styles.scss" />
+    <Content Include="admin\themes\standard\sidebar.cshtml" />
+    <Content Include="admin\Web.Config" />
+    <Content Include="AppCode\Wlw\TagMini.cshtml" />
+    <None Include="App_Data\PublishProfiles\bellevuesblog - Web Deploy.pubxml" />
+    <Content Include="bin\AjaxMin.dll" />
+    <Content Include="bin\BlogEngine.Core.dll" />
+    <Content Include="bin\BlogEngine.NET.dll" />
+    <Content Include="bin\BlogML.dll" />
+    <Content Include="bin\Dynamic.dll" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Microsoft.Web.XmlTransform.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\NuGet.Core.dll" />
+    <Content Include="bin\SimpleInjector.dll" />
+    <Content Include="bin\SimpleInjector.Extensions.ExecutionContextScoping.dll" />
+    <Content Include="bin\SimpleInjector.Integration.WebApi.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Custom\Themes\RazorHost\page.cshtml" />
+    <Content Include="Custom\Themes\RazorHost\site.master" />
+    <Content Include="Custom\Themes\Standard-2015\fonts\fontello.eot" />
+    <Content Include="Custom\Themes\Standard-2015\fonts\fontello.ttf" />
+    <Content Include="Custom\Themes\Standard-2015\fonts\fontello.woff" />
+    <Content Include="Custom\Themes\Standard-2015\site.master" />
+    <Content Include="Custom\Themes\Standard\package.json" />
+    <Content Include="Custom\Themes\Standard\site.master" />
+    <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.eot" />
+    <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.woff" />
+    <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Custom\Themes\Standard\src\fonts\FontAwesome.otf" />
+    <Content Include="Custom\Themes\Standard\src\scss\base\_base.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\base\_mixins.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\base\_variables.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\modules\_buttons.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\modules\_forms.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\modules\_rating.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\modules\_syntaxhighlighter.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_archive.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_comments.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_footer.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_header.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_pages.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_post.navigation.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_post.pager.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_post.related.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_posts.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_search.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\sections\_widgets.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\styles.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_authorlist.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_blogroll.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_categorylist.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_monthlist.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_mostcomments.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_newsletter.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_postlist.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_recentcomments.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_recentposts.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_rtl.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_search.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_tagcould.scss" />
+    <Content Include="Custom\Themes\Standard\src\scss\widgets\_textbox.scss" />
+    <Content Include="Custom\Widgets\Administration\widget.cshtml" />
+    <Content Include="Custom\Widgets\AuthorList\widget.cshtml" />
+    <Content Include="Custom\Widgets\BlogList\widget.cshtml" />
+    <Content Include="Custom\Widgets\BlogRoll\edit.cshtml" />
+    <Content Include="Custom\Widgets\BlogRoll\widget.cshtml" />
+    <Content Include="Custom\Widgets\CategoryList\edit.cshtml" />
+    <Content Include="Custom\Widgets\CategoryList\widget.cshtml" />
+    <Content Include="Custom\Widgets\CommentList\edit.cshtml" />
+    <Content Include="Custom\Widgets\CommentList\widget.cshtml" />
+    <Content Include="Custom\Widgets\common.cshtml" />
+    <Content Include="Custom\Widgets\LinkList\edit.cshtml" />
+    <Content Include="Custom\Widgets\LinkList\widget.cshtml" />
+    <Content Include="Custom\Widgets\MonthList\widget.cshtml" />
+    <Content Include="Custom\Widgets\Newsletter\edit.cshtml" />
+    <Content Include="Custom\Widgets\Newsletter\widget.cshtml" />
+    <Content Include="Custom\Widgets\PageList\widget.cshtml" />
+    <Content Include="Custom\Widgets\PostList\edit.cshtml" />
+    <Content Include="Custom\Widgets\PostList\widget.cshtml" />
+    <Content Include="Custom\Widgets\Search\widget.cshtml" />
+    <Content Include="Custom\Widgets\TagCloud\edit.cshtml" />
+    <Content Include="Custom\Widgets\TagCloud\widget.cshtml" />
+    <Content Include="Custom\Widgets\TextBox\edit.cshtml" />
+    <Content Include="Custom\Widgets\TextBox\widget.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\bellevues - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Dynamic Expressions.html" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\mediaelement\silverlightmediaelement.xap" />
+    <Content Include="Scripts\syntaxhighlighter\syntaxhighlighter.version" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="setup\Mono\mono_setup.sh" />
+    <Content Include="setup\MySQL\Archive\MySQLWeb.Config" />
+    <Content Include="setup\MySQL\MySQLWeb.Config" />
+    <Content Include="setup\SQLite\BlogEngine.s3db" />
+    <Content Include="setup\SQLite\SQLiteWeb.Config" />
+    <Content Include="setup\SQLServer\DbWeb.Config" />
+    <Content Include="setup\SQL_CE\SQL_CE_Web.Config" />
+    <Content Include="setup\upgrade\index.cshtml" />
+    <Content Include="setup\Web.config" />
+    <Content Include="Web.sitemap" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\account.css" />
+    <Content Include="Account\account.js" />
+    <Content Include="Account\change-password-success.aspx" />
+    <Content Include="Account\change-password.aspx" />
+    <Content Include="Account\create-blog.aspx" />
+    <Content Include="Account\login.aspx" />
+    <Content Include="Account\password-retrieval.aspx" />
+    <Content Include="Account\register.aspx" />
+    <Content Include="admin\app\app.js" />
+    <Content Include="admin\app\common.js" />
+    <Content Include="admin\app\content\blogs\blogController.js" />
+    <Content Include="admin\app\content\blogs\blogView.html" />
+    <Content Include="admin\app\content\categories\categoryController.js" />
+    <Content Include="admin\app\content\categories\categoryView.html" />
+    <Content Include="admin\app\content\comments\commentController.js" />
+    <Content Include="admin\app\content\comments\commentFilters.html" />
+    <Content Include="admin\app\content\comments\commentFilters.js" />
+    <Content Include="admin\app\content\comments\commentView.html" />
+    <Content Include="admin\app\content\pages\pageController.js" />
+    <Content Include="admin\app\content\pages\pageView.html" />
+    <Content Include="admin\app\content\posts\postController.js" />
+    <Content Include="admin\app\content\posts\postView.html" />
+    <Content Include="admin\app\content\tags\tagController.js" />
+    <Content Include="admin\app\content\tags\tagView.html" />
+    <Content Include="admin\app\custom\plugins\pluginController.js" />
+    <Content Include="admin\app\custom\plugins\pluginGallery.html" />
+    <Content Include="admin\app\custom\plugins\pluginView.html" />
+    <Content Include="admin\app\custom\themes\themeController.js" />
+    <Content Include="admin\app\custom\themes\themeGallery.html" />
+    <Content Include="admin\app\custom\themes\themeView.html" />
+    <Content Include="admin\app\custom\widgets\widgetController.js" />
+    <Content Include="admin\app\custom\widgets\widgetGallery.html" />
+    <Content Include="admin\app\custom\widgets\widgetGalleryController.js" />
+    <Content Include="admin\app\custom\widgets\widgetView.html" />
+    <Content Include="admin\app\dashboard\dashboardController.js" />
+    <Content Include="admin\app\dashboard\dashboardView.html" />
+    <Content Include="admin\app\data-service.js" />
+    <Content Include="admin\app\editor\editor-helpers.js" />
+    <Content Include="admin\app\editor\filemanagerController.js" />
+    <Content Include="admin\app\editor\pageeditorController.js" />
+    <Content Include="admin\app\editor\posteditorController.js" />
+    <Content Include="admin\app\grid-helpers.js" />
+    <Content Include="admin\app\listpager.js" />
+    <Content Include="admin\app\security\profile\profileController.js" />
+    <Content Include="admin\app\security\profile\profileView.html" />
+    <Content Include="admin\app\security\roles\roleController.js" />
+    <Content Include="admin\app\security\roles\roleView.html" />
+    <Content Include="admin\app\security\users\userController.js" />
+    <Content Include="admin\app\security\users\userView.html" />
+    <Content Include="admin\app\settings\advancedView.html" />
+    <Content Include="admin\app\settings\basicView.html" />
+    <Content Include="admin\app\settings\commentView.html" />
+    <Content Include="admin\app\settings\controls\blogrollController.js" />
+    <Content Include="admin\app\settings\controls\blogrollView.html" />
+    <Content Include="admin\app\settings\controls\pingController.js" />
+    <Content Include="admin\app\settings\controls\pingView.html" />
+    <Content Include="admin\app\settings\controlView.html" />
+    <Content Include="admin\app\settings\emailView.html" />
+    <Content Include="admin\app\settings\feedView.html" />
+    <Content Include="admin\app\settings\settingController.js" />
+    <Content Include="admin\app\settings\tools\checkView.html" />
+    <Content Include="admin\app\settings\tools\toolController.js" />
+    <Content Include="admin\editors\bootstrap-wysiwyg\bootstrap-wysiwyg.js" />
+    <Content Include="admin\editors\bootstrap-wysiwyg\editor.js" />
+    <Content Include="admin\editors\bootstrap-wysiwyg\jquery.hotkeys.js" />
+    <Content Include="admin\editors\summernote\editor.js" />
+    <Content Include="admin\editors\summernote\summernote-bs2.css" />
+    <Content Include="admin\editors\summernote\summernote-bs3.css" />
+    <Content Include="admin\editors\summernote\summernote.css" />
+    <Content Include="admin\editors\summernote\summernote.js" />
+    <Content Include="admin\editors\summernote\summernote.min.js" />
+    <Content Include="admin\editors\tinymce\editor.js" />
+    <Content Include="admin\editors\tinymce\license.txt" />
+    <Content Include="admin\editors\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="admin\editors\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\example\dialog.html" />
+    <Content Include="admin\editors\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\filemanager\filemgr.png" />
+    <Content Include="admin\editors\tinymce\plugins\filemanager\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="admin\editors\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\fonts\sh4tinymce.dev.svg" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\fonts\sh4tinymce.svg" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\langs\en.js" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\langs\fr_FR.js" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\plugin.js" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\sh4tinymce\style\style.css" />
+    <Content Include="admin\editors\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="admin\editors\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="admin\editors\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="admin\editors\tinymce\themes\modern\theme.min.js" />
+    <Content Include="admin\editors\tinymce\tinymce.min.js" />
+    <Content Include="admin\Extensions\Settings.ascx" />
+    <Content Include="admin\Extensions\Settings.aspx" />
+    <Content Include="admin\menu.ascx" />
+    <Content Include="admin\themes\standard\css\styles.css" />
+    <Content Include="admin\themes\standard\img\logo-sidebar.png" />
+    <Content Include="admin\themes\standard\img\profile.png" />
+    <Content Include="AppCode\Wlw\wlw.css" />
+    <Content Include="App_Data\blogroll.xml" />
+    <Content Include="App_Data\blogs.xml" />
+    <Content Include="App_Data\blogs\_new\categories.xml" />
+    <Content Include="App_Data\blogs\_new\datastore\widgets\be_WIDGET_ZONE.xml" />
+    <Content Include="App_Data\blogs\_new\pingservices.xml" />
+    <Content Include="App_Data\blogs\_new\posts\c3b491e5-59ac-4f6a-81e5-27e971b903ed.xml" />
+    <Content Include="App_Data\blogs\_new\rights.xml" />
+    <Content Include="App_Data\blogs\_new\roles.xml" />
+    <Content Include="App_Data\blogs\_new\settings.xml" />
+    <Content Include="App_Data\blogs\_new\setup.xml" />
+    <Content Include="App_Data\blogs\_new\users.xml" />
+    <Content Include="App_Data\categories.xml" />
+    <Content Include="App_Data\customfields.xml" />
+    <Content Include="App_Data\datastore\extensions\AkismetFilter.xml" />
+    <Content Include="App_Data\datastore\extensions\BBCode.xml" />
+    <Content Include="App_Data\datastore\extensions\BreakPost.xml" />
+    <Content Include="App_Data\datastore\extensions\Logger.xml" />
+    <Content Include="App_Data\datastore\extensions\MediaElementPlayer.xml" />
+    <Content Include="App_Data\datastore\extensions\MetaExtension.xml" />
+    <Content Include="App_Data\datastore\extensions\Recaptcha.xml" />
+    <Content Include="App_Data\datastore\extensions\ResolveLinks.xml" />
+    <Content Include="App_Data\datastore\extensions\SendCommentMail.xml" />
+    <Content Include="App_Data\datastore\extensions\SendNewsletters.xml" />
+    <Content Include="App_Data\datastore\extensions\SendPings.xml" />
+    <Content Include="App_Data\datastore\extensions\SimpleCaptcha.xml" />
+    <Content Include="App_Data\datastore\extensions\Smilies.xml" />
+    <Content Include="App_Data\datastore\extensions\StopForumSpam.xml" />
+    <Content Include="App_Data\datastore\widgets\5bf32012-4aa3-4031-8346-4d36f0fda6d9.xml" />
+    <Content Include="App_Data\datastore\widgets\be_WIDGET_ZONE.xml" />
+    <Content Include="App_Data\datastore\widgets\deb9fd7c-e0f4-4f24-964d-d5f67332bab0.xml" />
+    <Content Include="App_Data\extensionmap.txt" />
+    <Content Include="App_Data\files\20170414022755156.jpg" />
+    <Content Include="App_Data\labels.txt" />
+    <Content Include="App_Data\logger.txt" />
+    <Content Include="App_Data\monstercache\80\6981821.png" />
+    <Content Include="App_Data\newsletter.xml" />
+    <Content Include="App_Data\packagefiles.xml" />
+    <Content Include="App_Data\packages.xml" />
+    <Content Include="App_Data\pages\5d484c1c-d1f1-4be4-938a-f55bf24bf6ba.xml" />
+    <Content Include="App_Data\pingservices.xml" />
+    <Content Include="App_Data\posts\00ac3c41-cd29-40e9-8cf3-89983d871e50.xml" />
+    <Content Include="App_Data\posts\01fd96fc-8dd1-487d-9189-d18e62572597.xml" />
+    <Content Include="App_Data\posts\084bf057-c7fc-4a8e-bf1c-fbdb6560a0a9.xml" />
+    <Content Include="App_Data\posts\134faff0-9976-45f6-bbf3-34c197fd291d.xml" />
+    <Content Include="App_Data\posts\161917a8-cda4-4232-8552-d556beade6e9.xml" />
+    <Content Include="App_Data\posts\45cc5cdd-82d2-4e6e-a285-2ed13826d335.xml" />
+    <Content Include="App_Data\posts\6f922ea3-4c60-4563-8efa-27bf3ff392db.xml" />
+    <Content Include="App_Data\posts\9bf69e0d-c36c-409e-b8f9-b623718a8320.xml" />
+    <Content Include="App_Data\posts\9cb73d73-2ead-4fa7-a5b0-f3e8ffb11a2b.xml" />
+    <Content Include="App_Data\posts\aaec4c52-c55f-4f97-a2b8-fffa9c4dd160.xml" />
+    <Content Include="App_Data\posts\b28e0f7e-0a2d-4f7b-af8d-fd65886ed2d1.xml" />
+    <Content Include="App_Data\posts\c6e568d4-580f-449e-acc2-b8f2cb9ad9f9.xml" />
+    <Content Include="App_Data\posts\f39c3289-e861-48f7-a4b7-edaaffe6f6dc.xml" />
+    <Content Include="App_Data\profiles\admin.xml" />
+    <Content Include="App_Data\rights.xml" />
+    <Content Include="App_Data\roles.xml" />
+    <Content Include="App_Data\settings.xml" />
+    <Content Include="App_Data\stopwords.txt" />
+    <Content Include="App_Data\users.xml" />
+    <Content Include="App_Themes\Default\AppleIcon.png" />
+    <Content Include="App_Themes\Default\AppleStart.png" />
+    <Content Include="App_Themes\Default\Buy.png" />
+    <Content Include="App_Themes\Default\BuyButton.png" />
+    <Content Include="App_Themes\Default\Footer.png" />
+    <Content Include="App_Themes\Default\Full.css" />
+    <Content Include="App_Themes\Default\Microsoft.png" />
+    <Content Include="App_Themes\Default\Navigation.png" />
+    <Content Include="App_Themes\Default\NavigationLogo.png" />
+    <Content Include="App_Themes\Default\NavigationLogoIE6.png" />
+    <Content Include="App_Themes\Default\NavigationLogoTail.png" />
+    <Content Include="App_Themes\Default\NavigatioonBackground.png" />
+    <Content Include="App_Themes\Default\Reset.css" />
+    <Content Include="App_Themes\Default\SocialDeviantArt.png" />
+    <Content Include="App_Themes\Default\SocialFacebook.png" />
+    <Content Include="App_Themes\Default\SocialFlickr.png" />
+    <Content Include="App_Themes\Default\SocialGoogle.png" />
+    <Content Include="App_Themes\Default\SocialLinkedin.png" />
+    <Content Include="App_Themes\Default\SocialPicasa.png" />
+    <Content Include="App_Themes\Default\SocialQQ.png" />
+    <Content Include="App_Themes\Default\SocialRenren.png" />
+    <Content Include="App_Themes\Default\SocialRss.png" />
+    <Content Include="App_Themes\Default\SocialSkype.png" />
+    <Content Include="App_Themes\Default\SocialTwitter.png" />
+    <Content Include="App_Themes\Default\SocialWeibo.png" />
+    <Content Include="archive.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="Content\Auto\Global.css" />
+    <Content Include="Content\images\blog\actions\action-delete-small-lt.png" />
+    <Content Include="Content\images\blog\actions\action-delete-small.png" />
+    <Content Include="Content\images\blog\actions\action-edit-small-lt.png" />
+    <Content Include="Content\images\blog\actions\action-edit-small.png" />
+    <Content Include="Content\images\blog\actions\action-tools-small-lt.png" />
+    <Content Include="Content\images\blog\actions\action-tools-small.png" />
+    <Content Include="Content\images\blog\ajax-loader.gif" />
+    <Content Include="Content\images\blog\apml.png" />
+    <Content Include="Content\images\blog\avatars\blank.png" />
+    <Content Include="Content\images\blog\avatars\identicon.png" />
+    <Content Include="Content\images\blog\avatars\mm.png" />
+    <Content Include="Content\images\blog\avatars\monsterid.png" />
+    <Content Include="Content\images\blog\avatars\noavatar.png" />
+    <Content Include="Content\images\blog\avatars\retro.png" />
+    <Content Include="Content\images\blog\avatars\wavatar.png" />
+    <Content Include="Content\images\blog\benTag24.png" />
+    <Content Include="Content\images\blog\blogengine.ico" />
+    <Content Include="Content\images\blog\ext.png" />
+    <Content Include="Content\images\blog\flags\ad.png" />
+    <Content Include="Content\images\blog\flags\ae.png" />
+    <Content Include="Content\images\blog\flags\af.png" />
+    <Content Include="Content\images\blog\flags\ag.png" />
+    <Content Include="Content\images\blog\flags\ai.png" />
+    <Content Include="Content\images\blog\flags\al.png" />
+    <Content Include="Content\images\blog\flags\am.png" />
+    <Content Include="Content\images\blog\flags\an.png" />
+    <Content Include="Content\images\blog\flags\ao.png" />
+    <Content Include="Content\images\blog\flags\ar.png" />
+    <Content Include="Content\images\blog\flags\as.png" />
+    <Content Include="Content\images\blog\flags\at.png" />
+    <Content Include="Content\images\blog\flags\au.png" />
+    <Content Include="Content\images\blog\flags\aw.png" />
+    <Content Include="Content\images\blog\flags\ax.png" />
+    <Content Include="Content\images\blog\flags\az.png" />
+    <Content Include="Content\images\blog\flags\ba.png" />
+    <Content Include="Content\images\blog\flags\bb.png" />
+    <Content Include="Content\images\blog\flags\bd.png" />
+    <Content Include="Content\images\blog\flags\be.png" />
+    <Content Include="Content\images\blog\flags\bf.png" />
+    <Content Include="Content\images\blog\flags\bg.png" />
+    <Content Include="Content\images\blog\flags\bh.png" />
+    <Content Include="Content\images\blog\flags\bi.png" />
+    <Content Include="Content\images\blog\flags\bj.png" />
+    <Content Include="Content\images\blog\flags\bm.png" />
+    <Content Include="Content\images\blog\flags\bn.png" />
+    <Content Include="Content\images\blog\flags\bo.png" />
+    <Content Include="Content\images\blog\flags\br.png" />
+    <Content Include="Content\images\blog\flags\bs.png" />
+    <Content Include="Content\images\blog\flags\bt.png" />
+    <Content Include="Content\images\blog\flags\bv.png" />
+    <Content Include="Content\images\blog\flags\bw.png" />
+    <Content Include="Content\images\blog\flags\by.png" />
+    <Content Include="Content\images\blog\flags\bz.png" />
+    <Content Include="Content\images\blog\flags\ca.png" />
+    <Content Include="Content\images\blog\flags\cc.png" />
+    <Content Include="Content\images\blog\flags\cd.png" />
+    <Content Include="Content\images\blog\flags\cf.png" />
+    <Content Include="Content\images\blog\flags\cg.png" />
+    <Content Include="Content\images\blog\flags\ch.png" />
+    <Content Include="Content\images\blog\flags\ci.png" />
+    <Content Include="Content\images\blog\flags\ck.png" />
+    <Content Include="Content\images\blog\flags\cl.png" />
+    <Content Include="Content\images\blog\flags\cm.png" />
+    <Content Include="Content\images\blog\flags\cn.png" />
+    <Content Include="Content\images\blog\flags\co.png" />
+    <Content Include="Content\images\blog\flags\cr.png" />
+    <Content Include="Content\images\blog\flags\cs.png" />
+    <Content Include="Content\images\blog\flags\cu.png" />
+    <Content Include="Content\images\blog\flags\cv.png" />
+    <Content Include="Content\images\blog\flags\cx.png" />
+    <Content Include="Content\images\blog\flags\cy.png" />
+    <Content Include="Content\images\blog\flags\cz.png" />
+    <Content Include="Content\images\blog\flags\de.png" />
+    <Content Include="Content\images\blog\flags\dj.png" />
+    <Content Include="Content\images\blog\flags\dk.png" />
+    <Content Include="Content\images\blog\flags\dm.png" />
+    <Content Include="Content\images\blog\flags\do.png" />
+    <Content Include="Content\images\blog\flags\dz.png" />
+    <Content Include="Content\images\blog\flags\ec.png" />
+    <Content Include="Content\images\blog\flags\ee.png" />
+    <Content Include="Content\images\blog\flags\eg.png" />
+    <Content Include="Content\images\blog\flags\eh.png" />
+    <Content Include="Content\images\blog\flags\er.png" />
+    <Content Include="Content\images\blog\flags\es.png" />
+    <Content Include="Content\images\blog\flags\et.png" />
+    <Content Include="Content\images\blog\flags\fam.png" />
+    <Content Include="Content\images\blog\flags\fi.png" />
+    <Content Include="Content\images\blog\flags\fj.png" />
+    <Content Include="Content\images\blog\flags\fk.png" />
+    <Content Include="Content\images\blog\flags\fm.png" />
+    <Content Include="Content\images\blog\flags\fo.png" />
+    <Content Include="Content\images\blog\flags\fr.png" />
+    <Content Include="Content\images\blog\flags\ga.png" />
+    <Content Include="Content\images\blog\flags\gb.png" />
+    <Content Include="Content\images\blog\flags\gd.png" />
+    <Content Include="Content\images\blog\flags\ge.png" />
+    <Content Include="Content\images\blog\flags\gf.png" />
+    <Content Include="Content\images\blog\flags\gh.png" />
+    <Content Include="Content\images\blog\flags\gi.png" />
+    <Content Include="Content\images\blog\flags\gl.png" />
+    <Content Include="Content\images\blog\flags\gm.png" />
+    <Content Include="Content\images\blog\flags\gn.png" />
+    <Content Include="Content\images\blog\flags\gp.png" />
+    <Content Include="Content\images\blog\flags\gq.png" />
+    <Content Include="Content\images\blog\flags\gr.png" />
+    <Content Include="Content\images\blog\flags\gs.png" />
+    <Content Include="Content\images\blog\flags\gt.png" />
+    <Content Include="Content\images\blog\flags\gu.png" />
+    <Content Include="Content\images\blog\flags\gw.png" />
+    <Content Include="Content\images\blog\flags\gy.png" />
+    <Content Include="Content\images\blog\flags\hk.png" />
+    <Content Include="Content\images\blog\flags\hm.png" />
+    <Content Include="Content\images\blog\flags\hn.png" />
+    <Content Include="Content\images\blog\flags\hr.png" />
+    <Content Include="Content\images\blog\flags\ht.png" />
+    <Content Include="Content\images\blog\flags\hu.png" />
+    <Content Include="Content\images\blog\flags\id.png" />
+    <Content Include="Content\images\blog\flags\ie.png" />
+    <Content Include="Content\images\blog\flags\il.png" />
+    <Content Include="Content\images\blog\flags\in.png" />
+    <Content Include="Content\images\blog\flags\io.png" />
+    <Content Include="Content\images\blog\flags\iq.png" />
+    <Content Include="Content\images\blog\flags\ir.png" />
+    <Content Include="Content\images\blog\flags\is.png" />
+    <Content Include="Content\images\blog\flags\it.png" />
+    <Content Include="Content\images\blog\flags\jm.png" />
+    <Content Include="Content\images\blog\flags\jo.png" />
+    <Content Include="Content\images\blog\flags\jp.png" />
+    <Content Include="Content\images\blog\flags\ke.png" />
+    <Content Include="Content\images\blog\flags\kg.png" />
+    <Content Include="Content\images\blog\flags\kh.png" />
+    <Content Include="Content\images\blog\flags\ki.png" />
+    <Content Include="Content\images\blog\flags\km.png" />
+    <Content Include="Content\images\blog\flags\kn.png" />
+    <Content Include="Content\images\blog\flags\kp.png" />
+    <Content Include="Content\images\blog\flags\kr.png" />
+    <Content Include="Content\images\blog\flags\kw.png" />
+    <Content Include="Content\images\blog\flags\ky.png" />
+    <Content Include="Content\images\blog\flags\kz.png" />
+    <Content Include="Content\images\blog\flags\la.png" />
+    <Content Include="Content\images\blog\flags\lb.png" />
+    <Content Include="Content\images\blog\flags\lc.png" />
+    <Content Include="Content\images\blog\flags\li.png" />
+    <Content Include="Content\images\blog\flags\lk.png" />
+    <Content Include="Content\images\blog\flags\lr.png" />
+    <Content Include="Content\images\blog\flags\ls.png" />
+    <Content Include="Content\images\blog\flags\lt.png" />
+    <Content Include="Content\images\blog\flags\lu.png" />
+    <Content Include="Content\images\blog\flags\lv.png" />
+    <Content Include="Content\images\blog\flags\ly.png" />
+    <Content Include="Content\images\blog\flags\ma.png" />
+    <Content Include="Content\images\blog\flags\mc.png" />
+    <Content Include="Content\images\blog\flags\md.png" />
+    <Content Include="Content\images\blog\flags\me.png" />
+    <Content Include="Content\images\blog\flags\mg.png" />
+    <Content Include="Content\images\blog\flags\mh.png" />
+    <Content Include="Content\images\blog\flags\mk.png" />
+    <Content Include="Content\images\blog\flags\ml.png" />
+    <Content Include="Content\images\blog\flags\mm.png" />
+    <Content Include="Content\images\blog\flags\mn.png" />
+    <Content Include="Content\images\blog\flags\mo.png" />
+    <Content Include="Content\images\blog\flags\mp.png" />
+    <Content Include="Content\images\blog\flags\mq.png" />
+    <Content Include="Content\images\blog\flags\mr.png" />
+    <Content Include="Content\images\blog\flags\ms.png" />
+    <Content Include="Content\images\blog\flags\mt.png" />
+    <Content Include="Content\images\blog\flags\mu.png" />
+    <Content Include="Content\images\blog\flags\mv.png" />
+    <Content Include="Content\images\blog\flags\mw.png" />
+    <Content Include="Content\images\blog\flags\mx.png" />
+    <Content Include="Content\images\blog\flags\my.png" />
+    <Content Include="Content\images\blog\flags\mz.png" />
+    <Content Include="Content\images\blog\flags\na.png" />
+    <Content Include="Content\images\blog\flags\nc.png" />
+    <Content Include="Content\images\blog\flags\ne.png" />
+    <Content Include="Content\images\blog\flags\nf.png" />
+    <Content Include="Content\images\blog\flags\ng.png" />
+    <Content Include="Content\images\blog\flags\ni.png" />
+    <Content Include="Content\images\blog\flags\nl.png" />
+    <Content Include="Content\images\blog\flags\no.png" />
+    <Content Include="Content\images\blog\flags\np.png" />
+    <Content Include="Content\images\blog\flags\nr.png" />
+    <Content Include="Content\images\blog\flags\nu.png" />
+    <Content Include="Content\images\blog\flags\nz.png" />
+    <Content Include="Content\images\blog\flags\om.png" />
+    <Content Include="Content\images\blog\flags\pa.png" />
+    <Content Include="Content\images\blog\flags\pe.png" />
+    <Content Include="Content\images\blog\flags\pf.png" />
+    <Content Include="Content\images\blog\flags\pg.png" />
+    <Content Include="Content\images\blog\flags\ph.png" />
+    <Content Include="Content\images\blog\flags\pk.png" />
+    <Content Include="Content\images\blog\flags\pl.png" />
+    <Content Include="Content\images\blog\flags\pm.png" />
+    <Content Include="Content\images\blog\flags\pn.png" />
+    <Content Include="Content\images\blog\flags\pr.png" />
+    <Content Include="Content\images\blog\flags\ps.png" />
+    <Content Include="Content\images\blog\flags\pt.png" />
+    <Content Include="Content\images\blog\flags\pw.png" />
+    <Content Include="Content\images\blog\flags\py.png" />
+    <Content Include="Content\images\blog\flags\qa.png" />
+    <Content Include="Content\images\blog\flags\re.png" />
+    <Content Include="Content\images\blog\flags\ro.png" />
+    <Content Include="Content\images\blog\flags\rs.png" />
+    <Content Include="Content\images\blog\flags\ru.png" />
+    <Content Include="Content\images\blog\flags\rw.png" />
+    <Content Include="Content\images\blog\flags\sa.png" />
+    <Content Include="Content\images\blog\flags\sb.png" />
+    <Content Include="Content\images\blog\flags\sc.png" />
+    <Content Include="Content\images\blog\flags\sd.png" />
+    <Content Include="Content\images\blog\flags\se.png" />
+    <Content Include="Content\images\blog\flags\sg.png" />
+    <Content Include="Content\images\blog\flags\sh.png" />
+    <Content Include="Content\images\blog\flags\si.png" />
+    <Content Include="Content\images\blog\flags\sj.png" />
+    <Content Include="Content\images\blog\flags\sk.png" />
+    <Content Include="Content\images\blog\flags\sl.png" />
+    <Content Include="Content\images\blog\flags\sm.png" />
+    <Content Include="Content\images\blog\flags\sn.png" />
+    <Content Include="Content\images\blog\flags\so.png" />
+    <Content Include="Content\images\blog\flags\sr.png" />
+    <Content Include="Content\images\blog\flags\st.png" />
+    <Content Include="Content\images\blog\flags\sv.png" />
+    <Content Include="Content\images\blog\flags\sy.png" />
+    <Content Include="Content\images\blog\flags\sz.png" />
+    <Content Include="Content\images\blog\flags\tc.png" />
+    <Content Include="Content\images\blog\flags\td.png" />
+    <Content Include="Content\images\blog\flags\tf.png" />
+    <Content Include="Content\images\blog\flags\tg.png" />
+    <Content Include="Content\images\blog\flags\th.png" />
+    <Content Include="Content\images\blog\flags\tj.png" />
+    <Content Include="Content\images\blog\flags\tk.png" />
+    <Content Include="Content\images\blog\flags\tl.png" />
+    <Content Include="Content\images\blog\flags\tm.png" />
+    <Content Include="Content\images\blog\flags\tn.png" />
+    <Content Include="Content\images\blog\flags\to.png" />
+    <Content Include="Content\images\blog\flags\tr.png" />
+    <Content Include="Content\images\blog\flags\tt.png" />
+    <Content Include="Content\images\blog\flags\tv.png" />
+    <Content Include="Content\images\blog\flags\tw.png" />
+    <Content Include="Content\images\blog\flags\tz.png" />
+    <Content Include="Content\images\blog\flags\ua.png" />
+    <Content Include="Content\images\blog\flags\ug.png" />
+    <Content Include="Content\images\blog\flags\um.png" />
+    <Content Include="Content\images\blog\flags\us.png" />
+    <Content Include="Content\images\blog\flags\uy.png" />
+    <Content Include="Content\images\blog\flags\uz.png" />
+    <Content Include="Content\images\blog\flags\va.png" />
+    <Content Include="Content\images\blog\flags\vc.png" />
+    <Content Include="Content\images\blog\flags\ve.png" />
+    <Content Include="Content\images\blog\flags\vg.png" />
+    <Content Include="Content\images\blog\flags\vi.png" />
+    <Content Include="Content\images\blog\flags\vn.png" />
+    <Content Include="Content\images\blog\flags\vu.png" />
+    <Content Include="Content\images\blog\flags\wf.png" />
+    <Content Include="Content\images\blog\flags\ws.png" />
+    <Content Include="Content\images\blog\flags\ye.png" />
+    <Content Include="Content\images\blog\flags\yt.png" />
+    <Content Include="Content\images\blog\flags\za.png" />
+    <Content Include="Content\images\blog\flags\zm.png" />
+    <Content Include="Content\images\blog\flags\zw.png" />
+    <Content Include="Content\images\blog\icon-left.svg" />
+    <Content Include="Content\images\blog\icon-pass.svg" />
+    <Content Include="Content\images\blog\icon-user.svg" />
+    <Content Include="Content\images\blog\logo-footer.png" />
+    <Content Include="Content\images\blog\logo.png" />
+    <Content Include="Content\images\blog\noavatar.jpg" />
+    <Content Include="Content\images\blog\nothumb.jpg" />
+    <Content Include="Content\images\blog\opml.png" />
+    <Content Include="Content\images\blog\pingback.png" />
+    <Content Include="Content\images\blog\pixel.png" />
+    <Content Include="Content\images\blog\pkg.png" />
+    <Content Include="Content\images\blog\reply-arrow.gif" />
+    <Content Include="Content\images\blog\rssButton.png" />
+    <Content Include="Content\images\blog\selected-nav.png" />
+    <Content Include="Content\images\blog\star_small.gif" />
+    <Content Include="Content\images\blog\Theme.png" />
+    <Content Include="Content\images\blog\Widget.png" />
+    <Content Include="Content\images\blog\wrench84watermark.png" />
+    <Content Include="Content\images\blog\wrenchicon16.png" />
+    <Content Include="Content\images\blog\xfn\colleague.gif" />
+    <Content Include="Content\images\blog\xfn\colleagueMet.gif" />
+    <Content Include="Content\images\blog\xfn\contact.gif" />
+    <Content Include="Content\images\blog\xfn\contactMet.gif" />
+    <Content Include="Content\images\blog\xfn\me.gif" />
+    <Content Include="Content\images\blog\xfn\sweet.gif" />
+    <Content Include="Content\images\blog\xfn\sweetMet.gif" />
+    <Content Include="Content\star-rating.css" />
+    <Content Include="Custom\Controls\CommentList.ascx" />
+    <Content Include="Custom\Controls\Defaults\CommentForm.ascx" />
+    <Content Include="Custom\Controls\Defaults\CommentView.ascx" />
+    <Content Include="Custom\Controls\Defaults\PostNavigation.ascx" />
+    <Content Include="Custom\Controls\Defaults\PostView.ascx" />
+    <Content Include="Custom\Controls\PostList.ascx" />
+    <Content Include="Custom\Media\sample.flv" />
+    <Content Include="Custom\Themes\RazorHost\CommentForm.ascx" />
+    <Content Include="Custom\Themes\RazorHost\CommentView.ascx" />
+    <Content Include="Custom\Themes\RazorHost\PostNavigation.ascx" />
+    <Content Include="Custom\Themes\RazorHost\PostView.ascx" />
+    <Content Include="Custom\Themes\RazorHost\RelatedPosts.ascx" />
+    <Content Include="Custom\Themes\RazorHost\WidgetContainer.ascx" />
+    <Content Include="Custom\Themes\Standard-2015\CommentForm.ascx" />
+    <Content Include="Custom\Themes\Standard-2015\CommentView.ascx" />
+    <Content Include="Custom\Themes\Standard-2015\css\rtl.css" />
+    <Content Include="Custom\Themes\Standard-2015\css\styles.css" />
+    <Content Include="Custom\Themes\Standard-2015\fonts\fontello.svg" />
+    <Content Include="Custom\Themes\Standard-2015\images\carrow.png" />
+    <Content Include="Custom\Themes\Standard-2015\images\sarrow.png" />
+    <Content Include="Custom\Themes\Standard-2015\newsletter.html" />
+    <Content Include="Custom\Themes\Standard-2015\PostNavigation.ascx" />
+    <Content Include="Custom\Themes\Standard-2015\PostView.ascx" />
+    <Content Include="Custom\Themes\Standard-2015\RelatedPosts.ascx" />
+    <Content Include="Custom\Themes\Standard-2015\theme.png" />
+    <Content Include="Custom\Themes\Standard-2015\theme.xml" />
+    <Content Include="Custom\Themes\Standard-2015\WidgetContainer.ascx" />
+    <Content Include="Custom\Themes\Standard\CommentForm.ascx" />
+    <Content Include="Custom\Themes\Standard\CommentView.ascx" />
+    <Content Include="Custom\Themes\Standard\Gruntfile.js" />
+    <Content Include="Custom\Themes\Standard\newsletter.html" />
+    <Content Include="Custom\Themes\Standard\PostNavigation.ascx" />
+    <Content Include="Custom\Themes\Standard\PostView.ascx" />
+    <Content Include="Custom\Themes\Standard\RelatedPosts.ascx" />
+    <Content Include="Custom\Themes\Standard\src\css\bootstrap.min.css" />
+    <Content Include="Custom\Themes\Standard\src\css\font-awesome.min.css" />
+    <Content Include="Custom\Themes\Standard\src\css\styles.min.css" />
+    <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.svg" />
+    <Content Include="Custom\Themes\Standard\src\img\logo.png" />
+    <Content Include="Custom\Themes\Standard\src\js\bootstrap.min.js" />
+    <Content Include="Custom\Themes\Standard\src\js\custom.js" />
+    <Content Include="Custom\Themes\Standard\theme.png" />
+    <Content Include="Custom\Themes\Standard\theme.xml" />
+    <Content Include="Custom\Themes\Standard\WidgetContainer.ascx" />
+    <Content Include="Custom\Widgets\Administration\screenshot.png" />
+    <Content Include="Custom\Widgets\Administration\widget.xml" />
+    <Content Include="Custom\Widgets\AuthorList\screenshot.png" />
+    <Content Include="Custom\Widgets\AuthorList\widget.xml" />
+    <Content Include="Custom\Widgets\BlogList\screenshot.png" />
+    <Content Include="Custom\Widgets\BlogList\widget.xml" />
+    <Content Include="Custom\Widgets\BlogRoll\screenshot.png" />
+    <Content Include="Custom\Widgets\BlogRoll\widget.xml" />
+    <Content Include="Custom\Widgets\CategoryList\screenshot.png" />
+    <Content Include="Custom\Widgets\CategoryList\widget.xml" />
+    <Content Include="Custom\Widgets\CommentList\screenshot.png" />
+    <Content Include="Custom\Widgets\CommentList\widget.xml" />
+    <Content Include="Custom\Widgets\LinkList\screenshot.png" />
+    <Content Include="Custom\Widgets\LinkList\widget.xml" />
+    <Content Include="Custom\Widgets\MonthList\screenshot.png" />
+    <Content Include="Custom\Widgets\MonthList\widget.xml" />
+    <Content Include="Custom\Widgets\Newsletter\screenshot.png" />
+    <Content Include="Custom\Widgets\Newsletter\widget.xml" />
+    <Content Include="Custom\Widgets\PageList\screenshot.png" />
+    <Content Include="Custom\Widgets\PageList\widget.xml" />
+    <Content Include="Custom\Widgets\PostList\screenshot.png" />
+    <Content Include="Custom\Widgets\PostList\widget.xml" />
+    <Content Include="Custom\Widgets\Search\screenshot.png" />
+    <Content Include="Custom\Widgets\Search\widget.xml" />
+    <Content Include="Custom\Widgets\TagCloud\screenshot.png" />
+    <Content Include="Custom\Widgets\TagCloud\widget.xml" />
+    <Content Include="Custom\Widgets\TextBox\screenshot.png" />
+    <Content Include="Custom\Widgets\TextBox\widget.xml" />
+    <Content Include="default.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="error404.aspx" />
+    <Content Include="FrontPageExample.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="page.aspx" />
+    <Content Include="post.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\Auto\01-jquery-1.9.1.min.js" />
+    <Content Include="Scripts\Auto\02-jquery.cookie.js" />
+    <Content Include="Scripts\Auto\04-jquery-jtemplates.js" />
+    <Content Include="Scripts\Auto\05-json2.min.js" />
+    <Content Include="Scripts\Auto\blog.js" />
+    <Content Include="Scripts\contact.js" />
+    <Content Include="Scripts\jquery-jtemplates.js" />
+    <Content Include="Scripts\jquery-jtemplates.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jQuery\01-jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jQuery\02-jquery.cookie.js" />
+    <Content Include="Scripts\jQuery\03-jquery.validate.min.js" />
+    <Content Include="Scripts\jQuery\04-jquery-jtemplates.js" />
+    <Content Include="Scripts\jQuery\05-json2.min.js" />
+    <Content Include="Scripts\knockout.bindings.js" />
+    <Content Include="Scripts\mediaelement\background.png" />
+    <Content Include="Scripts\mediaelement\bigplay.png" />
+    <Content Include="Scripts\mediaelement\controls.png" />
+    <Content Include="Scripts\mediaelement\flashmediaelement.swf" />
+    <Content Include="Scripts\mediaelement\mediaelement.js" />
+    <Content Include="Scripts\mediaelement\mediaelement.min.js" />
+    <Content Include="Scripts\mediaelement\mediaelementplayer.css" />
+    <Content Include="Scripts\mediaelement\mediaelementplayer.js" />
+    <Content Include="Scripts\mediaelement\mediaelementplayer.min.css" />
+    <Content Include="Scripts\mediaelement\mediaelementplayer.min.js" />
+    <Content Include="Scripts\syntaxhighlighter\editor_plugin.js" />
+    <Content Include="Scripts\syntaxhighlighter\editor_plugin_src.js" />
+    <Content Include="Scripts\syntaxhighlighter\images\syntaxhighlighter.gif" />
+    <Content Include="Scripts\syntaxhighlighter\langs\en.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shAutoloader.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushAS3.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushBash.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushCpp.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushCss.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushDiff.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushErlang.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushHaxe.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushJava.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushJScript.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushPerl.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushPhp.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushPlain.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushPython.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushRuby.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushSass.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushScala.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushSql.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushVb.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shBrushXml.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shCore.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\shLegacy.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\syntaxhighlighter.js" />
+    <Content Include="Scripts\syntaxhighlighter\scripts\XRegExp.js" />
+    <Content Include="Scripts\syntaxhighlighter\shActivator.js" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCore.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreDefault.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreDjango.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreEclipse.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreEmacs.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreMidnight.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shCoreRDark.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeAppleScript.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeDefault.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeDjango.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeEclipse.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeEmacs.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeMidnight.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\shThemeRDark.css" />
+    <Content Include="Scripts\syntaxhighlighter\styles\syntaxhighlighter.css" />
+    <Content Include="Scripts\syntaxhighlighter\syntaxhighlighter.htm" />
+    <Content Include="Scripts\textext.js" />
+    <Content Include="search.aspx" />
+    <Content Include="setup\Mono\ReadMe.txt" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup1.4.5.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup1.5.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup1.6.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup2.0.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup2.5.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup2.6.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup2.7.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup2.8.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup3.0.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLSetup3.1.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeFrom1.5To1.6.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeFrom1.6To2.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeFrom2.0To2.5.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeFrom2.5To2.6.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeFrom2.6To3.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeFrom3.0To3.1.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeTo1.4.5.0From1.4.0.0.sql" />
+    <Content Include="setup\MySQL\Archive\MySQLUpgradeTo1.5.0From1.4.5.sql" />
+    <Content Include="setup\MySQL\MySql.Data.dll" />
+    <Content Include="setup\MySQL\ReadMe.txt" />
+    <Content Include="setup\MySQL\Setup.sql" />
+    <Content Include="setup\ReadMe.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom1.4.5.0To1.4.0.0.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom1.5To1.6.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom1.6To2.0.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom2.0To2.5.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom2.5To2.6.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom2.6To3.0.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeFrom3.0To3.1.txt" />
+    <Content Include="setup\SQLite\Archive\SQLiteUpgradeTo1.5.0From1.4.5.txt" />
+    <Content Include="setup\SQLite\ReadMe.txt" />
+    <Content Include="setup\SQLite\System.Data.SQLite.dll" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup1.4.5.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup1.5.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup1.6.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup2.0.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup2.5.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup2.6.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup2.7.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup2.8.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup3.0.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLSetup3.1.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeFrom1.5To1.6.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeFrom1.6To2.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeFrom2.0to2.5.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeFrom2.5to2.6.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeFrom2.8to3.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeFrom3.0to3.1.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeTo1.4.5.0From1.3.x.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeTo1.4.5.0From1.4.0.0.sql" />
+    <Content Include="setup\SQLServer\Archive\MSSQLUpgradeTo1.5.0.0From1.4.5.0.sql" />
+    <Content Include="setup\SQLServer\ReadMe.txt" />
+    <Content Include="setup\SQLServer\Setup.sql" />
+    <Content Include="setup\SQLServer\Upgrade.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_2.0.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_2.5.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_2.6.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_2.7.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_2.8.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_3.0.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_Setup_3.1.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_UpgradeFrom2.0to2.5.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_UpgradeFrom2.5to2.6.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_UpgradeFrom2.6to3.0.sql" />
+    <Content Include="setup\SQL_CE\Archive\SQL_CE_UpgradeFrom3.0to3.1.sql" />
+    <Content Include="setup\SQL_CE\BlogEngine.sdf" />
+    <Content Include="setup\SQL_CE\ReadMe.txt" />
+    <Content Include="setup\TestFiles\sample.flv" />
+    <Content Include="setup\TestFiles\sample.png" />
+    <Content Include="setup\TestFiles\sample.txt" />
+    <Content Include="setup\upgrade\bootstrap.min.css" />
+    <Content Include="setup\upgrade\bootstrap.min.js" />
+    <Content Include="setup\upgrade\jquery-2.0.3.min.js" />
+    <Content Include="setup\upgrade\setup.txt" />
+    <Content Include="setup\upgrade\spinner.gif" />
+    <Content Include="setup\upgrade\Updater.asmx" />
+    <Content Include="setup\upgrade\Updater.js" />
+    <Content Include="Web.config" />
+    <Content Include="wlwmanifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\labels.af.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.af.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.ar.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.bg.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.cs.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.da.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.da.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.de.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.el-GR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.el-GR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.es.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.et.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.et.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.fa.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.fa.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.fi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.fr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.he.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.hr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.hr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.hu.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.is.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.is.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.it.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.ja.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.ko.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.ko.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.mk.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.mk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.nl-be.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.nl-be.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.nl.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.no.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.no.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.pl.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.pt-BR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.ru.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.sk.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.sl.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.sl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.sq.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.sv.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.th.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.th.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.tr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.uk.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.uk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.vi-VN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.vi-VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.zh-CN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.zh-TW.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.zh-TW.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\labels.af.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.af.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.ar.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.ar.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.bg.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.bg.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.cs.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.cs.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.da.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.da.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.de.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.de.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.el-GR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.el-GR.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.es.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.es.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.et.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.et.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.fa.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.fa.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.fi.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.fi.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.fr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.fr.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.he.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.he.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.hr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.hr.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.hu.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.hu.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.is.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.is.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.it.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.it.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.ja.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.ja.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.ko.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.ko.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.mk.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.mk.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.nl-be.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.nl-be.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.nl.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.nl.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.no.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.no.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.pl.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.pl.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.pt-BR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.pt-BR.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.ru.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.ru.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.sk.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.sk.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.sl.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.sl.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.sq.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.sq.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.sv.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.sv.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.th.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.th.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.tr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.tr.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.uk.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.uk.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.vi-VN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.vi-VN.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.zh-CN.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\labels.zh-TW.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.zh-TW.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\files\avatars\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56683</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5359/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

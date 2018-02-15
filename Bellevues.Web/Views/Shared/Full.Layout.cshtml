@@ -1,0 +1,177 @@
+﻿<!DOCTYPE HTML>
+<html @*manifest="@this.Url.Action("Full", "Site", new { id = SiteViewId.CacheManifest })"*@>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="倍丽芙(Bellevues)源自瑞士, 纯净天然, 是专业的护肤美容品牌, 旗下有面膜产品(美白, 补水, 修复, 抗皱, 控油, 抗痘)系列, 眼膜产品(抗皱, 舒缓)系列, 精华产品系列." />
+    <meta name="keywords" content="倍丽芙, Bellevues, Belle-vues, 源自瑞士, 纯净天然, 护肤, 美容, 面膜, 眼膜, 精华, 套装, 玫瑰, 葡萄籽, 活氧, 美白, 补水, 修复, 抗皱, 控油, 抗痘, 舒缓" />
+    <meta name="robots" content="index, follow" />
+
+    <title>倍丽芙 Bellevues - @this.RenderSection("Title", true) - 源自瑞士, 纯净天然</title>
+
+    <link rel="shortcut icon" href="@this.Href("~/favicon.ico")" type="image/x-icon" />
+
+    <link rel="stylesheet" href="@this.Href("~/App_Themes/Default/Reset.css")" type="text/css" />
+    <link rel="stylesheet" href="@this.Href("~/App_Themes/Default/Full.css")" type="text/css" />
+    <!--[if lte IE 7]>
+        <style type="text/css">
+            div.bellevues-nav-content-logo {
+                left: -147px;
+            }
+            .bellevues-page-block-list li {
+                display: inline;
+            }
+        </style>
+    <![endif]-->
+    <!--[if lte IE 6]>
+        <style type="text/css">
+            a.bellevues-nav-content-logo {
+                background: url("NavigationLogoIE6.png");
+            }
+            div.bellevues-nav-content-logo {
+                left: -150px;
+            }
+            .bellevues-page-block h1 {
+                font-weight: bold;
+            }
+        </style>
+    <![endif]-->
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" sizes="144x144" href="@this.Href("~/App_Themes/Default/AppleIcon.png")" />
+    @*On iPhone and iPod touch, the image must be 320 x 460 pixels and in portrait orientation.*@
+    <link rel="apple-touch-startup-image" href="@this.Href("~/App_Themes/Default/AppleStart.png")" />
+
+    @*Windows 8*@
+    <meta name="application-name" content="倍丽芙 Bellevues" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="@this.Href("~/App_Themes/Default/Microsoft.png")" />
+
+    @*Google Analytics*@
+    <meta name="google-site-verification" content="ZQwFVlHwHeEVDCPIsSq447rUvnh1Mra8wdv9WTenEEY" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-494599-10']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    @*Baidu*@
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe1c775697d507803356952c8a24102f5' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    @*Cachhe*@
+    @*<script type="text/javascript">
+        (function (global) {
+            var cache = global.applicationCache;
+            if (cache) {
+                global.addEventListener("load", function () {
+                    cache.addEventListener("updateready", function () {
+                        if (cache.status === cache.UPDATEREADY) {
+                            // Browser downloaded a new app cache.
+                            // Swap it in and reload the page to get the new hotness.
+                            cache.swapCache();
+                            global.location.reload();
+                        }
+                    }, false);
+                }, false);
+            }
+        }(this));
+    </script>*@
+</head>
+<body>
+    <div class="bellevues">
+        <div class="bellevues-nav">
+            <div class="bellevues-nav-content">
+                <a class="bellevues-nav-content-logo" href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Home })" title="倍丽芙 Bellevues">倍丽芙 Bellevues</a>
+                <ul>
+                    <li class="@this.RenderSection("NavigationHome", false)"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Home })" title="倍丽芙 Bellevues - 首页">首页</a></li>
+                    <li class="@this.RenderSection("NavigationStory", false)"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Story })" title="倍丽芙 Bellevues - 美丽的风景(品牌故事)">美丽的风景</a></li>
+                    <li class="@this.RenderSection("NavigationFeatures", false)"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Features })" title="倍丽芙 Bellevues - 源自瑞士的纯净天然(成分和功效)">源自瑞士的纯净天然</a></li>
+                    <li class="@this.RenderSection("NavigationFacial", false)"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })" title="倍丽芙 Bellevues - 面膜系列">面膜系列</a></li>
+                    <li class="@this.RenderSection("NavigationEye", false)"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })" title="倍丽芙 Bellevues - 眼膜系列">眼膜系列</a></li>
+                    <li class="@this.RenderSection("NavigationSerum", false)"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })" title="倍丽芙 Bellevues - 精华系列">精华系列</a></li>
+                    <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Contact })" title="倍丽芙 Bellevues - 加入我们">加入我们</a></li>
+                    @*<li><a href="@Constants.BlogUrl" title="倍丽芙 Bellevues - 博客">官方博客</a></li>*@
+                    <li><a class="bellevues-page-buy-button" href="@Constants.StoreUrl" title="立即购买" target="_blank">立即购买</a></li>
+                </ul>
+                <div class="bellevues-nav-content-logo"></div>
+            </div>
+        </div>
+        <div class="bellevues-page">
+            <div class="bellevues-page-content">
+                @this.RenderBody()
+            </div>
+            <div class="bellevues-page-buy">
+                <a class="bellevues-page-buy-button" href="@Constants.StoreUrl" title="立即购买" target="_blank">立即购买</a>
+                <div class="bellevues-page-buy-header bellevues-page-social">
+                    @*<a target="_blank" href="https://facebook.com/bellevues1" title="倍丽芙 Bellevues - Facebook" class="facebook">倍丽芙 Bellevues - Facebook</a>*@
+                    @*<a target="_blank" href="https://twitter.com/Bellevues_com" title="倍丽芙 Bellevues - Twitter" class="twitter">倍丽芙 Bellevues - Twitter</a>*@
+                    <a target="_blank" href="https://www.linkedin.com/company-beta/18024103/" title="倍丽芙 Bellevues - Linkedin" class="linkedin">倍丽芙 Bellevues - Linkedin</a>
+                    <a target="_blank" href="http://www.flickr.com/bellevues-com" title="倍丽芙 Bellevues - Flickr" class="flickr">倍丽芙 Bellevues - Flickr</a>
+                    @*<a target="_blank" href="https://plus.google.com/118116984378120304597" title="倍丽芙 Bellevues - Google+" class="googleplus">倍丽芙 Bellevues - Google+</a>*@
+                    @*<a target="_blank" href="http://bellevues.deviantart.com" title="倍丽芙 Bellevues - DeviantArt" class="deviantart">倍丽芙 Bellevues - DeviantArt</a>*@
+                    <a target="_blank" href="http://www.baike.com/wiki/%E5%80%8D%E4%B8%BD%E8%8A%99" title="倍丽芙 Bellevues - 互动百科" class="deviantart">倍丽芙 Bellevues - DeviantArt</a>
+                    @*<a target="_blank" href="https://picasaweb.google.com/118116984378120304597" title="倍丽芙 Bellevues - Picasa" class="picasa">倍丽芙 Bellevues - Picasa</a>*@
+                    <a target="_blank" href="skype:Bellevues.com?chat" title="倍丽芙 Bellevues - Skype" class="skype">倍丽芙 Bellevues - Skype</a>
+                    @*<a target="_blank" href="http://user.qzone.qq.com/2019578857" title="倍丽芙 Bellevues - QQ" class="qq">倍丽芙 Bellevues - QQ</a>*@
+                    @*<a target="_blank" href="http://www.renren.com/beilifu" title="倍丽芙 Bellevues - 人人" class="renren">倍丽芙 Bellevues - 人人</a>*@
+                    <a target="_blank" href="http://e.weibo.com/beilifu" title="倍丽芙 Bellevues - 微博" class="weibo">倍丽芙 Bellevues - 微博</a>
+                    @*<a target="_blank" href="http://blog.bellevues.com" title="倍丽芙 Bellevues - 博客" class="blog">倍丽芙 Bellevues - 博客</a>*@
+                </div>
+                <div class="bellevues-page-buy-body">
+                    <ul>
+                        <li><span>倍丽芙面膜系列</span></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceWhitening" title="玫瑰活氧美白面膜">时光塑颜紧致面膜</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceMoisture" title="玫瑰活氧补水面膜">玫瑰活氧补水面膜</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceFixing" title="玫瑰活氧修复面膜">时光活颜喜悦面膜</a></li>
+                        <li style="display:none;"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceAntiWrinkle" title="玫瑰活氧抗皱面膜">玫瑰活氧抗皱面膜</a></li>
+                        <li style="display:none;"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceOilControl" title="葡萄籽活氧控油面膜">葡萄籽活氧控油面膜</a></li>
+                        <li style="display:none;"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceAcneEliminating" title="葡萄籽活氧抗痘面膜">葡萄籽活氧抗痘面膜</a></li>
+                    </ul>
+                    <ul>
+                        <li><span>倍丽芙眼膜系列</span></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })#@ProductAnchor.EyeAntiAllergy" title="玫瑰活氧舒缓眼膜">玫瑰活氧舒缓眼膜</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })#@ProductAnchor.EyeAntiWrinkle" title="玫瑰活氧抗皱眼膜">玫瑰活氧抗皱眼膜</a></li>
+                    </ul>
+                    <ul>
+                        <li><span>倍丽芙精华系列</span></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceWhitening" title="玫瑰活氧美白精华">玫瑰活氧美白精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceMoisture" title="玫瑰活氧补水精华">玫瑰活氧补水精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceFixing" title="玫瑰活氧修复精华">玫瑰活氧修复精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceAntiWrinkle" title="玫瑰活氧抗皱精华">玫瑰活氧抗皱精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceOilControl" title="葡萄籽活氧控油精华">葡萄籽活氧控油精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceAcneEliminating" title="葡萄籽活氧抗痘精华">葡萄籽活氧抗痘精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.EyeAntiAllergy" title="玫瑰活氧舒缓眼精华">玫瑰活氧舒缓眼精华</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.EyeAntiWrinkle" title="玫瑰活氧抗皱眼精华">玫瑰活氧抗皱眼精华</a></li>
+                    </ul>
+                </div>
+                <div class="bellevues-page-buy-footer">
+                    <span><a href="@Constants.Url" title="倍丽芙 Bellevues.com">倍丽芙(Bellevues.com)</a> · 源自瑞士, 纯净天然</span>
+                </div>
+            </div>
+            <div class="bellevues-page-footer">
+                <div>
+                    <span>Copyright &copy; 2012 - 2017 保留所有权利<a href="http://www.miibeian.gov.cn" target="_blank">粤ICP备13023786号-1</a></span>
+                    <ul>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Terms })" title="倍丽芙 Bellevues - 使用条款">使用条款</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Privacy })" title="倍丽芙 Bellevues - 使用条款">客户隐私政策</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.SiteMap })" title="倍丽芙 Bellevues - 网站地图">网站地图</a></li>
+                        <li><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Contact })" title="倍丽芙 Bellevues - 使用条款">联系我们</a></li>
+                        <li><a href="@Constants.BlogUrl" title="倍丽芙 Bellevues - 博客">官方博客</a></li>
+                        <li><a href="@Constants.StoreUrl" title="倍丽芙 Bellevues - 立即购买" target="_blank">立即购买</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

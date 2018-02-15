@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/Full.Layout.cshtml";
+}
+
+@section Title {
+网站地图
+}
+
+<div class="bellevues-page-block bellevues-page-textblock">
+    <div>
+        <h1>网站地图</h1>
+
+        <h2>倍丽芙</h2>
+
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Home.ToString() })" title="倍丽芙 Bellevues - 首页">首页</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Story.ToString() })" title="倍丽芙 Bellevues - 美丽的风景(品牌故事)">美丽的风景(品牌故事)</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Features.ToString() })" title="倍丽芙 Bellevues - 源自瑞士的纯净天然(成分和功效)">产品特色(成分和功效)</a></p>
+
+        <h2>倍丽芙面膜</h2>
+
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })" title="面膜系列">面膜系列</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceWhitening" title="时光塑颜紧致面膜">时光塑颜紧致面膜</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceMoisture" title="玫瑰活氧补水面膜">玫瑰活氧补水面膜</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceFixing" title="时光活颜喜悦面膜">时光活颜喜悦面膜</a></p>
+        <p style="display:none;"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceAntiWrinkle" title="玫瑰活氧抗皱面膜">玫瑰活氧抗皱面膜</a></p>
+        <p style="display:none;"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceOilControl" title="葡萄籽活氧控油面膜">葡萄籽活氧控油面膜</a></p>
+        <p style="display:none;"><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Facial })#@ProductAnchor.FaceAcneEliminating" title="葡萄籽活氧抗痘面膜">葡萄籽活氧抗痘面膜</a></p>
+
+        <h2>倍丽芙眼膜</h2>
+
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })" title="眼膜系列">眼膜系列</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })#@ProductAnchor.EyeAntiAllergy" title="玫瑰活氧舒缓眼膜">玫瑰活氧舒缓眼膜</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Eye })#@ProductAnchor.EyeAntiWrinkle" title="玫瑰活氧抗皱眼膜">玫瑰活氧抗皱眼膜</a></p>
+
+        <h2>倍丽芙精华</h2>
+
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })" title="精华系列">精华系列</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceWhitening" title="玫瑰活氧美白面膜">玫瑰活氧美白精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceMoisture" title="玫瑰活氧补水面膜">玫瑰活氧补水精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceFixing" title="玫瑰活氧修复面膜">玫瑰活氧修复精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceAntiWrinkle" title="玫瑰活氧抗皱面膜">玫瑰活氧抗皱精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceOilControl" title="葡萄籽活氧控油面膜">葡萄籽活氧控油精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.FaceAcneEliminating" title="葡萄籽活氧抗痘面膜">葡萄籽活氧抗痘精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.EyeAntiAllergy" title="玫瑰活氧舒缓眼精华">玫瑰活氧舒缓眼精华</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Serum })#@ProductAnchor.EyeAntiWrinkle" title="玫瑰活氧抗皱眼精华">玫瑰活氧抗皱眼精华</a></p>
+
+        <h2>支持</h2>
+
+        <p><a href="http://beilifu.taobao.com" title="倍丽芙 Bellevues - 立即购买" target="_blank">立即购买</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Terms })" title="倍丽芙 Bellevues - 使用条款">使用条款</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Privacy })" title="倍丽芙 Bellevues - 使用条款">客户隐私政策</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.SiteMap })" title="倍丽芙 Bellevues - 网站地图">网站地图</a></p>
+        <p><a href="@this.Url.Action("Full", "Site", new { id = SiteViewId.Contact })" title="倍丽芙 Bellevues - 使用条款">联系我们</a></p>
+    </div>
+</div>

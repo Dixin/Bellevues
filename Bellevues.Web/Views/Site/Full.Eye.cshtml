@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/Full.Layout.cshtml";
+}
+
+@section Title {
+眼膜系列
+}
+
+@section NavigationEye{
+selected
+}
+
+<style type="text/css">
+    
+</style>
+
+<div class="bellevues-page-block bellevues-page-block-list" style="background-image: url('@this.Href("~/Contents/Eye.jpg")');">
+    <div style="height: 550px;">
+        <div style="padding: 140px 100px 0 0; text-align: center;">
+            <h1>倍丽芙: 美丽的风景</h1>
+            <h2>Belle vues: Beautiful views</h2>
+            <h2>
+                源自瑞士, 纯净天然的专业护肤<br />
+                让您成为每一个人眼中美丽的风景
+            </h2>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>眼膜系列</h1>
+            <h2>立体呵护, 流光盈动</h2>
+        </div>
+    </div>
+    <ul>
+        <li style="border-bottom-color: #FD8C8F;"><a href="#@ProductAnchor.FaceOilControl">舒缓眼膜</a></li>
+        <li style="border-bottom-color: #83D0FE;"><a href="#@ProductAnchor.FaceAcneEliminating">抗皱眼膜</a></li>
+    </ul>
+</div>
+
+<a id="@ProductAnchor.EyeAntiAllergy"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.EyeAntiAllergy + ".jpg")');">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>玫瑰活氧<span style="color: #FD8C8F;">舒缓</span>眼膜</h1>
+        <h2>蕴含丰富微量元素及瞬间锁水成分, 迅速与细胞中的蛋白质有效结合, 提高细胞中的含氧质量, 并且瞬间提升肌肤的含水量和保水度, 激发细胞再生能力, 深度舒缓神经紧张, 达到良好的放松, 减压功效.</h2>
+        @*<a class="bellevues-page-buy-button" href="@Constants.EyeAntiAllergy" title="立即购买" target="_blank">立即购买</a>*@
+    </div>
+</div>
+
+<a id="@ProductAnchor.EyeAntiWrinkle"></a>
+<div class="bellevues-page-block" style="height: 300px; background: url('@this.Href("~/Contents/" + ProductAnchor.EyeAntiWrinkle + ".jpg")');">
+    <div style="padding: 40px 60px 0 410px;">
+        <h1>玫瑰活氧<span style="color: #83D0FE;">抗皱</span>眼膜</h1>
+        <h2>产品中的高山火绒草精华成分蕴含丰富的矿物质, 对肌肤具有舒缓, 镇静, 美白及滋养保护作用, 促进细胞的再生机能, 强化细胞的新陈代谢, 修复受损细胞, 淡化眼部幼纹及黑眼圈. 长期使用, 可让双眸呈现出润泽亮白的迷人光彩.</h2>
+        @*<a class="bellevues-page-buy-button" href="@Constants.EyeAntiWrinkle" title="立即购买" target="_blank">立即购买</a>*@
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets>
+  <widget id="e53c0e19-c61b-4f6e-aa90-09da817488bc" title="Administration" showTitle="True">Administration</widget>
+  <widget id="a305a372-ba9f-49b3-ac49-1453faa3efc0" title="搜索" showTitle="True">Search</widget>
+  <widget id="5bf32012-4aa3-4031-8346-4d36f0fda6d9" title="最新文章" showTitle="True">PostList</widget>
+  <widget id="abde36cb-9ba6-4645-afc3-c0e4292ce72e" title="订阅" showTitle="True">Newsletter</widget>
+</widgets>

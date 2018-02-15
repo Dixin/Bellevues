@@ -1,0 +1,395 @@
+﻿body {
+    height: 100%;
+    font-family: "Microsoft Yahei", "Segoe UI", "Tahoma", "SimSun";
+    font-size: 14px;
+    line-height: 18px;
+    background: #DEDEDE;
+}
+
+.bellevues {
+    height: 100%;
+    min-width: 990px;
+}
+
+.bellevues-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("NavigatioonBackground.png") repeat-x;
+    z-index: 1001;
+}
+
+.bellevues-nav-content {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    background: url("Navigation.png");
+}
+
+.bellevues-nav-content ul {
+    display: inline;
+    float: right;
+    margin-right: 10px;
+    margin-top: 27px;
+}
+
+.bellevues-nav-content li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 15px;
+    line-height: 23px;
+    float: left;
+}
+
+.bellevues-nav-content li.selected {
+    border-bottom: 4px #D03F42 solid;
+}
+
+.bellevues-nav-content li a, .bellevues-nav-content li a:link, .bellevues-nav-content li a:visited {
+    color: #333333;
+}
+
+.bellevues-nav-content li a:hover, .bellevues-nav-content li a:active {
+    color: #999999;
+}
+
+a.bellevues-nav-content-logo {
+    background: url("NavigationLogo.png");
+    display: inline-block;
+    float: left;
+    width: 245px;
+    height: 60px;
+    font-size: 0;
+    line-height: 0;
+}
+
+div.bellevues-nav-content-logo {
+    position: relative;
+    background: url("NavigationLogoTail.png");
+    width: 22px;
+    height: 6px;
+    left: 98px;
+    top: 60px;
+    z-index: 1001;
+    font-size: 0;
+    line-height: 0;
+}
+
+.bellevues-page {
+    height: 100%;
+    font-size: 12px;
+    color: #333333;
+    background: rgb(245, 246, 247);
+    z-index: 1000;
+}
+
+.bellevues-page a, .bellevues-page a:link, .bellevues-page a:visited {
+    color: #0088CC;
+}
+
+.bellevues-page a:hover, .bellevues-page a:active {
+    color: #0088CC;
+    text-decoration: underline;
+}
+
+.bellevues-page-content {
+    width: 982px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 60px;
+}
+
+.bellevues-page-block {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    border: 1px #C0C0C0 solid;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 15px;
+    height: 550px;
+}
+
+.bellevues-page-block a.full {
+    line-height: 0;
+    font-size: 0;
+    display: inline-block;
+    width: 980px;
+    height: 550px;
+}
+
+.bellevues-page-block a:hover, .bellevues-page-block a:active {
+    text-decoration: none;
+}
+
+.bellevues-page-block a:hover h1, .bellevues-page-block a:active h1 {
+    color: #666666;
+}
+
+.bellevues-page-block a:hover h2, .bellevues-page-block a:active h2 {
+    color: #999999;
+}
+
+.bellevues-page-block h1 {
+    font-size: 28px;
+    color: #333333;
+    height: auto;
+    line-height: 150%;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.bellevues-page-block h2 {
+    font-size: 18px;
+    color: #666666;
+    height: auto;
+    line-height: 150%;
+    margin-top: 9px;
+    margin-bottom: 18px;
+}
+
+.bellevues-page-block h2 .sup {
+    vertical-align: super;
+    font-size: 12px;
+    margin-bottom: -3px;
+}
+
+.bellevues-page-textblock {
+    height: auto;
+}
+
+.bellevues-page-textblock div {
+    margin: 15px;
+}
+
+.bellevues-page-textblock h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 32px;
+}
+
+.bellevues-page-textblock h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 24px;
+}
+
+.bellevues-page-textblock p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #666666;
+}
+
+.bellevues-page-buy {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px #C0C0C0 solid;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.bellevues-page-buy .bellevues-page-buy-button {
+    float: right;
+    margin-right: 20px;
+    margin-top: 22px;
+}
+
+.bellevues-page-buy-button, .bellevues-page-buy-button:link, .bellevues-page-buy-button:visited {
+    display: inline-block;
+    width: 72px;
+    height: 23px;
+    font-size: 0;
+    line-height: 0;
+    background: url("BuyButton.png") 0 -25px;
+    vertical-align: top;
+}
+
+.bellevues-page-buy-button:hover, .bellevues-page-buy-button:active {
+    background: url("BuyButton.png");
+}
+
+.bellevues-page-buy-header {
+    vertical-align: central;
+}
+
+.bellevues-page-social a {
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.bellevues-page-social a.facebook {
+    background: url("SocialFacebook.png");
+}
+
+.bellevues-page-social a.twitter {
+    background: url("SocialTwitter.png");
+}
+
+.bellevues-page-social a.flickr {
+    background: url("SocialFlickr.png");
+}
+
+.bellevues-page-social a.googleplus {
+    background: url("SocialGoogle.png");
+}
+
+.bellevues-page-social a.deviantart {
+    background: url("SocialDeviantArt.png");
+}
+
+.bellevues-page-social a.linkedin {
+    background: url("SocialLinkedin.png");
+}
+
+.bellevues-page-social a.picasa {
+    background: url("SocialPicasa.png");
+}
+
+.bellevues-page-social a.skype {
+    background: url("SocialSkype.png");
+}
+
+.bellevues-page-social a.qq {
+    background: url("SocialQQ.png");
+}
+
+.bellevues-page-social a.renren {
+    background: url("SocialRenren.png");
+}
+
+.bellevues-page-social a.weibo {
+    background: url("SocialWeibo.png");
+}
+
+.bellevues-page-social a.blog {
+    background: url("SocialRss.png");
+}
+
+.bellevues-page-buy-body {
+    padding-left: 260px;
+    height: 192px;
+    background: rgb(249, 249, 249) url("Buy.png");
+}
+
+.bellevues-page-buy-body ul {
+    float: left;
+    width: 239px;
+    line-height: 20px;
+}
+
+.bellevues-page-buy-body li span {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.bellevues-page-buy-footer {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px #C0C0C0 solid;
+}
+
+.bellevues-page-footer {
+    height: 30px;
+    background: url("Footer.png");
+    line-height: 30px;
+}
+
+.bellevues-page-footer div {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+}
+
+.bellevues-page-footer span {
+    float: left;
+}
+
+.bellevues-page-footer ul {
+    float: right;
+    display: inline;
+}
+
+.bellevues-page-footer li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 15px;
+    float: left;
+}
+
+.bellevues-page-block-home {
+    font-size: 0;
+    line-height: 0;
+}
+
+.bellevues-page-block-home a.main div {
+    height: 166px;
+    text-align: center;
+    padding-right: 220px;
+    padding-top: 405px;
+}
+
+.bellevues-page-block-home a.list {
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    width: 326px;
+    height: 198px;
+}
+
+.bellevues-page-block-home a.list div {
+    height: auto;
+    padding: 50px 0 0 125px;
+    text-align: center;
+}
+
+.bellevues-page-block-list {
+    height: 600px;
+    background-color: #DFDFDF;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.bellevues-page-block-list ul {
+    border-top: #C0C0C0 1px solid;
+    background: url("Footer.png") top repeat-x;
+    text-align: center;
+}
+
+.bellevues-page-block-list li {
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    font-size: 18px;
+    line-height: 36px;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+}
+
+.bellevues-page-block-list a:link, .bellevues-page-block-list a:visited {
+    color: #333333;
+}
+
+.bellevues-page-block-list a:hover, .bellevues-page-block-list a:active {
+    color: #666666;
+}

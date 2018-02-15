@@ -1,0 +1,360 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<%@ Import Namespace="BlogEngine.Core" %>
+<%
+    Page.Header.DataBind();
+
+    // fix the bug related to Perisan Culture
+    if (System.Threading.Thread.CurrentThread.CurrentCulture.LCID == 1065)
+        System.Threading.Thread.CurrentThread.CurrentCulture = new PersianCulture();
+    if (Security.IsAuthenticated)
+    {
+        aLoginText.InnerText = Resources.labels.admin;
+        aLogin.HRef = Utils.RelativeWebRoot + "admin/";
+    }
+    else
+    {
+        aLoginText.InnerText = Resources.labels.login;
+        aLogin.HRef = Utils.RelativeWebRoot + "Account/login.aspx?ReturnURL=" + Utils.RelativeWebRoot + "admin/";
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Kreon:400,700" rel="stylesheet">
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="src/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="src/css/styles.min.css?=v12" rel="stylesheet" />
+    <link href="~/scripts/syntaxhighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="~/scripts/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%# Utils.ApplicationRelativeWebRoot %>scripts/syntaxhighlighter/scripts/XRegExp.js"></script>
+    <script type="text/javascript" src="<%# Utils.ApplicationRelativeWebRoot %>scripts/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="<%# Utils.ApplicationRelativeWebRoot %>scripts/syntaxhighlighter/scripts/shAutoloader.js"></script>
+    <script type="text/javascript" src="<%# Utils.ApplicationRelativeWebRoot %>scripts/syntaxhighlighter/shActivator.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="~/Content/images/blog/blogengine.ico" type="image/x-icon" />
+    <style>
+        body {
+            background: [CUSTOMFIELD|THEME|Standard|background color left|#232526/];
+            background: -webkit-linear-gradient(to left, [CUSTOMFIELD|THEME|Standard|background color right|#414345/], [CUSTOMFIELD|THEME|Standard|background color left|#232526/]);
+            background: linear-gradient(to left, [CUSTOMFIELD|THEME|Standard|background color right|#414345/], [CUSTOMFIELD|THEME|Standard|background color left|#232526/]);
+        }
+    </style>
+
+    <link rel="stylesheet" href="~/App_Themes/Default/Reset.css" type="text/css" />
+    <link rel="stylesheet" href="~/App_Themes/Default/Full.css" type="text/css" />
+    <!--[if lte IE 7]>
+        <style type="text/css">
+            div.bellevues-nav-content-logo {
+                left: -147px;
+            }
+            .bellevues-page-block-list li {
+                display: inline;
+            }
+        </style>
+    <![endif]-->
+    <!--[if lte IE 6]>
+        <style type="text/css">
+            a.bellevues-nav-content-logo {
+                background: url("NavigationLogoIE6.png");
+            }
+            div.bellevues-nav-content-logo {
+                left: -150px;
+            }
+            .bellevues-page-block h1 {
+                font-weight: bold;
+            }
+        </style>
+    <![endif]-->
+    <style type="text/css">
+        .bellevues-page-content {
+            padding-top: 80px;
+        }
+
+        .post {
+            border: 1px #C0C0C0 solid;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .Widget, header.blog-header {
+            border: 1px #C0C0C0 solid;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            background: #FFFFFF;
+        }
+
+        #PageWrapper header.blog-header a.blog-logo, .widget .widget-header, .widget .widget-content  {
+            color: #333333  !important;
+        }
+
+        .widget .widget-content .form-control, .widget .widget-content #searchbox input[type=text] {
+            border: 1px #C0C0C0 solid;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #333333;
+        }
+
+        .PostPad {
+            margin-bottom: 20px;
+        }
+
+        .PostTitle {
+            font-size: 28px;
+            height: auto;
+            line-height: 120%;
+            margin: 5px 0px 0px 0px;
+        }
+
+        .post .PostTitle a {
+            text-shadow: none;
+        }
+
+        .PostInfo {
+            margin-top: 15px;
+        }
+
+        .PostBody {
+            font-size: 18px;
+            line-height: 150%;
+            color: #666666;
+        }
+
+        .PostTags {
+            color: #AAAAAA;
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        #PostPager {
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+            #PostPager li {
+                height: 30px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+                #PostPager li.PagerLinkCurrent, #PostPager li.PagerLinkDisabled {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+
+        #PostPager a, #PostPager a:link, #PostPager a:visited {
+            color: #0088CC;
+        }
+
+        #PostPager a:hover, #PostPagera:active {
+            color: #0088CC;
+            text-decoration: underline;
+        }
+
+        #postnavigation {
+            border: 1px #C0C0C0 solid;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .commentForm {
+            border: 1px #C0C0C0 solid;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-size: 16px;
+        }
+
+            .commentForm #addcomment {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+        div.search {
+            padding: 20px 0px 20px 5px;
+        }
+
+            div.search #searchfield {
+                border: 1px solid #C0C0C0;
+            }
+    </style>
+
+    <%--Baidu--%>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0034ea134641afd5deb357f0453a23ac' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <%--Google--%>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-494599-11', 'bellevues.com');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body class="<%=Resources.labels.LangDirection %>">
+    <form runat="Server">
+        <div class="bellevues">
+            <!-- Header -->
+            <div class="bellevues-nav">
+                <div class="bellevues-nav-content">
+                    <a class="bellevues-nav-content-logo" href="http://bellevues.com/Home })" title="倍丽芙 Bellevues">倍丽芙 Bellevues</a>
+                    <ul>
+                        <li><a href="http://bellevues.com/Home" title="倍丽芙 Bellevues - 首页">首页</a></li>
+                        <li><a href="http://bellevues.com/Story" title="倍丽芙 Bellevues - 美丽的风景(品牌故事)">美丽的风景</a></li>
+                        <li><a href="http://bellevues.com/Features" title="倍丽芙 Bellevues - 源自瑞士的纯净天然(成分和功效)">源自瑞士的纯净天然</a></li>
+                        <li><a href="http://bellevues.com/Facial" title="倍丽芙 Bellevues - 面膜系列">面膜系列</a></li>
+                        <li><a href="http://bellevues.com/Eye" title="倍丽芙 Bellevues - 眼膜系列">眼膜系列</a></li>
+                        <li><a href="http://bellevues.com/Serum" title="倍丽芙 Bellevues - 精华系列">精华系列</a></li>
+                        <li><a href="/post/Bellevues-WeChat" title="倍丽芙 Bellevues - 加入我们">加入我们</a></li>
+                        <li class="selected"><a href="/" title="倍丽芙 Bellevues - 博客">官方博客</a></li>
+                        <li><a class="bellevues-page-buy-button" href="http://beilifu.taobao.com" title="立即购买" target="_blank">立即购买</a></li>
+                    </ul>
+                    <div class="bellevues-nav-content-logo"></div>
+                </div>
+            </div>
+            <!-- /Header -->
+
+            <div class="bellevues-page">
+                <div class="bellevues-page-content">
+
+                    <div class="container" id="PageWrapper">
+                        <div class="blog-wrapper">
+                            <aside class="blog-sidebar">
+                                <header class="blog-header">
+                                    <div class="blog-info">
+                                        <a class="blog-logo" href="<%=Utils.AbsoluteWebRoot %>" tabindex="-1">
+                                            <img src="<%=Utils.AbsoluteWebRoot %>[CUSTOMFIELD|THEME|Standard|Logo|Custom/Themes/Standard/src/img/logo.png/]" alt="<%=BlogSettings.Instance.Name %>" />
+                                            <%=BlogSettings.Instance.Name %>
+                                        </a>
+                                        <div class="blog-author">
+                                            [CUSTOMFIELD|THEME|Standard|About Author|/]
+                                        </div>
+                                        <ul class="social-network">
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Facebook Account|/]" rel="external nofollow"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Twitter Account|/]" rel="external nofollow"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Google Plus Account|/]" rel="external nofollow"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Linkedin Account|/]" rel="external nofollow"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Instagramm Account|/]" rel="external nofollow"><i class="fa fa-instagram"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Youtube Account|/]" rel="external nofollow"><i class="fa fa-youtube"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Github Account|/]" rel="external nofollow"><i class="fa fa-git"></i></a></li>
+                                            <li><a href="[CUSTOMFIELD|THEME|Standard|Pinterest Account|/]" rel="external nofollow"><i class="fa fa-pinterest"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <nav class="blog-nav">
+                                        <ul>
+                                            <li><a href="<%=Utils.AbsoluteWebRoot %>" class="item-home" title="<%=Resources.labels.home %>"><i class="fa fa-home"></i></a></li>
+                                            <li><a href="<%=Utils.AbsoluteWebRoot %>archive" class="item-archive" title="<%=Resources.labels.archive %>"><i class="fa fa-align-left"></i></a></li>
+                                            <li><a href="<%=Utils.AbsoluteWebRoot %>contact" class="item-contact" title="<%=Resources.labels.contact %>"><i class="fa fa-envelope"></i></a></li>
+                                            <li><a runat="server" id="aLogin" class="item-login" title=""><span id="aLoginText" runat="server"></span></a></li>
+                                        </ul>
+                                    </nav>
+                                </header>
+                                <blog:WidgetZone ID="WidgetZone1" runat="server" ZoneName="be_WIDGET_ZONE" />
+                                <footer class="blog-footer">
+                                    <%--<p>
+                                        Copyright &copy; <%=DateTime.Now.Year %>
+                                    </p>
+                                    <p>
+                                        Powered by <a href="http://dotnetblogengine.net/" target="_blank" title="BlogEngine.NET <%=BlogSettings.Instance.Version() %>">BlogEngine.NET</a>
+                                    </p>
+                                    <p>
+                                        Designed by <a href="http://francis.bio/" rel="nofollow" target="_blank">Francis Bio</a>
+                                    </p>--%>
+                                </footer>
+                            </aside>
+                            <div class="blog-content admin-alerts-[CUSTOMFIELD|THEME|Standard|Home Alert Box (true or false?)|true/]">
+                                <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bellevues-page-buy">
+                    <a class="bellevues-page-buy-button" href="http://beilifu.taobao.com" title="立即购买" target="_blank">立即购买</a>
+                    <div class="bellevues-page-buy-header bellevues-page-social">
+                        <a target="_blank" href="https://www.linkedin.com/company-beta/18024103/" title="倍丽芙 Bellevues - Linkedin" class="linkedin">倍丽芙 Bellevues - Linkedin</a>
+                        <a target="_blank" href="http://www.flickr.com/bellevues-com" title="倍丽芙 Bellevues - Flickr" class="flickr">倍丽芙 Bellevues - Flickr</a>
+                        <a target="_blank" href="http://www.baike.com/wiki/%E5%80%8D%E4%B8%BD%E8%8A%99" title="倍丽芙 Bellevues - 互动百科" class="deviantart">倍丽芙 Bellevues - DeviantArt</a>
+                        <a target="_blank" href="skype:Bellevues.com?chat" title="倍丽芙 Bellevues - Skype" class="skype">倍丽芙 Bellevues - Skype</a>
+                        <a target="_blank" href="http://e.weibo.com/beilifu" title="倍丽芙 Bellevues - 微博" class="weibo">倍丽芙 Bellevues - 微博</a>
+                        <a target="_blank" href="http://blog.bellevues.com" title="倍丽芙 Bellevues - 博客" class="blog">倍丽芙 Bellevues - 博客</a>
+                    </div>
+                    <div class="bellevues-page-buy-body">
+                        <ul>
+                            <li><span>倍丽芙面膜系列</span></li>
+                            <li><a href="http://bellevues.com/Facial#FaceWhitening" title="玫瑰活氧美白面膜">玫瑰活氧美白面膜</a></li>
+                            <li><a href="http://bellevues.com/Facial#FaceMoisture" title="玫瑰活氧补水面膜">玫瑰活氧补水面膜</a></li>
+                            <li><a href="http://bellevues.com/Facial#FaceFixing" title="玫瑰活氧修复面膜">玫瑰活氧修复面膜</a></li>
+                            <li><a href="http://bellevues.com/Facial#FaceAntiWrinkle" title="玫瑰活氧抗皱面膜">玫瑰活氧抗皱面膜</a></li>
+                            <li><a href="http://bellevues.com/Facial#FaceOilControl" title="葡萄籽活氧控油面膜">葡萄籽活氧控油面膜</a></li>
+                            <li><a href="http://bellevues.com/Facial#FaceAcneEliminating" title="葡萄籽活氧抗痘面膜">葡萄籽活氧抗痘面膜</a></li>
+                        </ul>
+                        <ul>
+                            <li><span>倍丽芙眼膜系列</span></li>
+                            <li><a href="http://bellevues.com/Eye#EyeAntiAllergy" title="玫瑰活氧舒缓眼膜">玫瑰活氧舒缓眼膜</a></li>
+                            <li><a href="http://bellevues.com/Eye#EyeAntiWrinkle" title="玫瑰活氧抗皱眼膜">玫瑰活氧抗皱眼膜</a></li>
+                        </ul>
+                        <ul>
+                            <li><span>倍丽芙精华系列</span></li>
+                            <li><a href="http://bellevues.com/Serum#FaceWhitening" title="玫瑰活氧美白精华">玫瑰活氧美白精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#FaceMoisture" title="玫瑰活氧补水精华">玫瑰活氧补水精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#FaceFixing" title="玫瑰活氧修复精华">玫瑰活氧修复精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#FaceAntiWrinkle" title="玫瑰活氧抗皱精华">玫瑰活氧抗皱精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#FaceOilControl" title="葡萄籽活氧控油精华">葡萄籽活氧控油精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#FaceAcneEliminating" title="葡萄籽活氧抗痘精华">葡萄籽活氧抗痘精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#EyeAntiAllergy" title="玫瑰活氧舒缓眼精华">玫瑰活氧舒缓眼精华</a></li>
+                            <li><a href="http://bellevues.com/Serum#EyeAntiWrinkle" title="玫瑰活氧抗皱眼精华">玫瑰活氧抗皱眼精华</a></li>
+                        </ul>
+                    </div>
+                    <div class="bellevues-page-buy-footer">
+                        <span><a href="@Constants.Url" title="倍丽芙 Bellevues.com">倍丽芙(Bellevues.com)</a> · 源自瑞士, 纯净天然</span> · <a href="http://www.miibeian.gov.cn" target="_blank">粤ICP备13023786号-1</a>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bellevues-page-footer">
+                    <div>
+                        <span>Copyright &copy; 2012 - 2015 <a href="mailto:admin@Bellevues.com" title="网站支持">admin@Bellevues.com</a> +86-13709028585 +1-3603624675</span>
+                        <ul>
+                            <li><a href="http://bellevues.com/Terms" title="倍丽芙 Bellevues - 使用条款">使用条款</a></li>
+                            <li><a href="http://bellevues.com/Privacy" title="倍丽芙 Bellevues - 使用条款">客户隐私政策</a></li>
+                            <li><a href="http://bellevues.com/SiteMap" title="倍丽芙 Bellevues - 网站地图">网站地图</a></li>
+                            <li><a href="http://bellevues.com/Contact" title="倍丽芙 Bellevues - 使用条款">联系我们</a></li>
+                            <li><a runat="server" id="a1"></a></li>
+                            <li><a href="http://bellevues.com" title="倍丽芙 Bellevues - 立即购买" target="_blank">立即购买</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /Footer -->
+
+            </div>
+        </div>
+        <script src="<%=Utils.RelativeWebRoot %>custom/themes/standard/src/js/bootstrap.min.js"></script>
+        <script src="<%=Utils.RelativeWebRoot %>custom/themes/standard/src/js/custom.js"></script>
+    </form>
+</body>
+</html>
